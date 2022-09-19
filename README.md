@@ -8,7 +8,7 @@ An online E-store system built in Java 8=>11 and ___ _replace with other platfor
 - MEMBER1
 - MEMBER2
 - MEMBER3
-- MEMBER4
+- Omar Ramirez
 
 
 ## Prerequisites
