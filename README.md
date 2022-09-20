@@ -7,7 +7,7 @@ An online E-store system built in Java 8=>11 and ___ _replace with other platfor
 
 - Thomas Garcia 
 - Ivan Lin
-- JianZhuang JianG
+- JianZhuang Jiang 
 - Aagman Relan
 - Omar Ramirez Chio
 
