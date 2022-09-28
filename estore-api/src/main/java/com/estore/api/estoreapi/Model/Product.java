@@ -2,8 +2,6 @@ package com.estore.api.estoreapi.Model;
 
 import java.util.logging.Logger;
 
-import javax.print.attribute.standard.MediaSize.NA;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Product {
