@@ -11,12 +11,12 @@ public class Product {
     private static final Logger LOG = Logger.getLogger(Product.class.getName());
 
 
-    @JsonProperty("id") private int id;
-    @JsonProperty("Type") private String Type;
-    @JsonProperty("Name") private String Name;
-    @JsonProperty("Instructor") private String Instructor;
-    @JsonProperty("Room_Number") private String Room_Number;
-    @JsonProperty("Available") private boolean Available;
+    @JsonProperty("id") private int id;         //transaction ID
+    @JsonProperty("Type") private String Type;  //online or in-person
+    @JsonProperty("Name") private String Name;  //person name
+    @JsonProperty("Instructor") private String Instructor;  //instructor name
+    @JsonProperty("Room_Number") private String Room_Number;    //room number
+    @JsonProperty("Available") private boolean Available;       //true unless it overllaps with other times
 
 
     @Override
