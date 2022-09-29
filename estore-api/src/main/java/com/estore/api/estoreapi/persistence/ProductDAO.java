@@ -14,10 +14,10 @@ public interface ProductDAO {
     Product getProduct(int id) throws IOException;
 
 
-    Product createProduct(Product hero) throws IOException;
+    Product createProduct(Product product) throws IOException;
 
 
-    Product updateProduct(Product hero) throws IOException;
+    Product updateProduct(Product product) throws IOException;
 
 
     boolean deleteProduct(int id) throws IOException;
