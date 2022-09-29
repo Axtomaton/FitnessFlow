@@ -2,6 +2,7 @@ package com.estore.api.estoreapi.controller;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
+import java.security.PublicKey;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,6 +49,27 @@ public class ProductController {
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    /**
+     * 
+     */
+    @GetMapping("Product/{Product}")
+    public ResponseEntity<Product> updateProduct(@PathVariable Product newP){
+        LOG.info("PUT   /pruduct "+ newP);
+        int id = newP.getID();
+        try{
+            if(productDao.getProduct(id) != null){
+                productDao.updateProduct(newP);
+                return new ResponseEntity<Product>(newP,HttpStatus.OK);
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        }
+        catch(IOException e){
+            LOG.log(Level.SEVERE,e.getLocalizedMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 
+
+    }
 
 }
