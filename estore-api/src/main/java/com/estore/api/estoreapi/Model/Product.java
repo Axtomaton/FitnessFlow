@@ -9,17 +9,20 @@ public class Product {
     private static final Logger LOG = Logger.getLogger(Product.class.getName());
 
 
-    @JsonProperty("id") private int id;
-    @JsonProperty("Type") private String Type;
-    @JsonProperty("Name") private String Name;
-    @JsonProperty("Instructor") private String Instructor;
-    @JsonProperty("Room_Number") private String Room_Number;
-    @JsonProperty("Available") private boolean Available;
+    private int id;
+
+    private String Name;
+
+    private String Type;
+ 
+    private String Instructor;
+    private String Room_Number;
+    private boolean Available;
 
 
     @Override
     public String toString() {
-        String Product="Product( "+id+" "+Name+" "+Type+" "+Instructor+" "+Room_Number+" "+Available+" )";
+        String Product="Product(ID:"+id+", Name:"+Name+", Type:"+Type+", Instructor:"+Instructor+", Room:"+Room_Number+", Available:"+Available+")";
         return Product;
     }
 
@@ -33,26 +36,27 @@ public class Product {
         this.Available = Available;
     }
 
+    @JsonProperty("id") 
     public int getID(){
         return id;
     }
-
+    @JsonProperty("Type") 
     public String getType(){
         return Type;
     }
-
+    @JsonProperty("Name") 
     public String getName(){
         return Name;
     }
-
+    @JsonProperty("Instructor")
     public String getInstructor(){
         return Instructor;
     }
-
+    @JsonProperty("Room_Number") 
     public String get_Room_Number(){
-        return get_Room_Number();
+        return Room_Number;
     }
-
+    @JsonProperty("Available") 
     public boolean IsAvailable(){
         return Available;
     }

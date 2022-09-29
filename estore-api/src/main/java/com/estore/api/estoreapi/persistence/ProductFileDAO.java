@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -25,7 +26,7 @@ public class ProductFileDAO implements ProductDAO{
     private static int nextId;  
     private String filename;    
 
-
+    @Autowired
     public ProductFileDAO(@Value("${products.file}")String filename,ObjectMapper objectmapper) throws IOException{
             this.filename=filename;
             this.objectMapper = objectmapper;
@@ -144,5 +145,4 @@ public class ProductFileDAO implements ProductDAO{
 
         }
     }
-    
 }
