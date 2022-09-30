@@ -56,12 +56,7 @@ public class ProductController {
 
         try {
             Product[] products = productDao.findProduct(name);
-            if (products.length > 0){
                 return new ResponseEntity<Product[]>(products, HttpStatus.OK);
-            }
-            else{
-                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
         } catch (IOException e) {
             LOG.log(Level.SEVERE,e.getLocalizedMessage());
             return new ResponseEntity<Product[]>(HttpStatus.INTERNAL_SERVER_ERROR);
