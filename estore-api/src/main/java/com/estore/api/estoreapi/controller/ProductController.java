@@ -32,7 +32,7 @@ public class ProductController {
     }
 
     @GetMapping("product/{id}")
-    public ResponseEntity<Product> checkGet(@PathVariable int id){
+    public ResponseEntity<Product> GetSingleProduct(@PathVariable int id){
         LOG.info("GET /admin/product/ "+id);
         try{
                 Product product = productDao.getProduct(id);
