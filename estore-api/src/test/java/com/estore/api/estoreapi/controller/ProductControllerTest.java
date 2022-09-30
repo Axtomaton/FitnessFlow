@@ -47,4 +47,21 @@ public class ProductControllerTest {
         assertEquals(product, response.getBody());
     }
 
+    @Test
+    public void testSearchProducts() throws IOException{
+        Product[] products = new Product[2];
+
+        products[0] = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
+        "Generic Test Room", false);
+        products[1] = new Product(998, "Test Product", " est Type", "Generic Test Instructor", 
+        "Generic Test Room", true);
+        String name="odu";
+        when(mockproductDAO.findProduct(name)).thenReturn(products);
+
+        ResponseEntity<Product[]> response = productController.searchProduct(name);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(products.length, response.getBody().length);
+    }
+
 }

@@ -55,11 +55,12 @@ public class ProductController {
         LOG.info("GET /admin/product/?Name="+name);
 
         try {
-            Product[] products = productDao.findProduct(name);
+                Product[] products = productDao.findProduct(name);
                 return new ResponseEntity<Product[]>(products, HttpStatus.OK);
-        } catch (IOException e) {
-            LOG.log(Level.SEVERE,e.getLocalizedMessage());
-            return new ResponseEntity<Product[]>(HttpStatus.INTERNAL_SERVER_ERROR);
+        } 
+        catch (IOException e) {
+                LOG.log(Level.SEVERE,e.getLocalizedMessage());
+                return new ResponseEntity<Product[]>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
