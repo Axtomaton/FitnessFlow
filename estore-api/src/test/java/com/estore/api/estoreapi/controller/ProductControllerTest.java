@@ -83,4 +83,19 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
     }
 
+    @Test
+    public void testGetInventory() throws IOException{
+        Product[] products = new Product[5];
+        for(int i=0;i<5;i++){
+            products[i] = new Product(i, "Generic", "Generic", "Generic", "Generic", false);
+        }
+        when(mockproductDAO.getProducts()).thenReturn(products);
+
+        ResponseEntity<Product[]> response =productController.getallInventory();
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(products, response.getBody());
+        
+    }
+
 }
