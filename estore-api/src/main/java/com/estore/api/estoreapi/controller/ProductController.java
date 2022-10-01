@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.parsing.PassThroughSourceExtractor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,5 +64,24 @@ public class ProductController {
                 return new ResponseEntity<Product[]>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @DeleteMapping("product/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable int id){
+        LOG.info("DELETE /admin/product/"+id);
+        try{
+            if (productDao.getProduct(id)!=null){
+                productDao.deleteProduct(id);
+                return new ResponseEntity<>("The requested product was successfully Deleted",HttpStatus.OK);
+            }
+            else{
+                return new ResponseEntity<String>("The Requested Product was not Found",HttpStatus.NOT_FOUND);
+            }
+        }
+        catch(Exception e){
+            LOG.log(Level.SEVERE,e.getLocalizedMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 }

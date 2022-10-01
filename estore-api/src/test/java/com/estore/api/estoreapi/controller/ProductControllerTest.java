@@ -1,6 +1,7 @@
 package com.estore.api.estoreapi.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -62,6 +63,24 @@ public class ProductControllerTest {
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(products.length, response.getBody().length);
+    }
+
+    @Test
+    public void testDeleteProduct() throws IOException{
+        when(mockproductDAO.getProduct(0)).thenReturn(new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
+                   "Generic Test Room", false));
+        when(mockproductDAO.deleteProduct(0)).thenReturn(true);
+        ResponseEntity<String>  response= productController.deleteProduct(0);
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("The requested product was successfully Deleted", response.getBody());
+
+    }
+
+    @Test
+    public void testDeleteProductError() throws IOException{
+        doThrow(new IOException()).when(mockproductDAO).getProduct(0);
+        ResponseEntity<String> response = productController.deleteProduct(0);
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
     }
 
 }
