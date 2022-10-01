@@ -98,4 +98,16 @@ public class ProductControllerTest {
         
     }
 
+    @Test
+    public void testUpdate() throws IOException{
+        Product product = new Product(99, "Generic", "Generic", "Generic", "Generic", false);
+
+        when(mockproductDAO.getProduct(99)).thenReturn(product);
+        when(mockproductDAO.updateProduct(product)).thenReturn(product);
+
+        ResponseEntity<Product> response = productController.updateProduct(product);
+        assertEquals(HttpStatus.OK,response.getStatusCode());
+    
+    }
+
 }
