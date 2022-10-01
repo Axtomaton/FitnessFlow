@@ -13,6 +13,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -52,8 +54,8 @@ public class ProductController {
     /**
      * 
      */
-    @GetMapping("Product/{Product}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Product newP){
+    @PutMapping("/product")
+    public ResponseEntity<Product> updateProduct(@RequestBody Product newP){
         LOG.info("PUT   /pruduct "+ newP);
         int id = newP.getID();
         try{
@@ -68,8 +70,7 @@ public class ProductController {
         catch(IOException e){
             LOG.log(Level.SEVERE,e.getLocalizedMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-
-
     }
+}
 
 }
