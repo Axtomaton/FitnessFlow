@@ -83,5 +83,20 @@ public class ProductController {
         }
     }
 
+    @GetMapping("/products")
+    public ResponseEntity<Product[]>getallInventory(){
+        LOG.info("GET /admin/products");
+        try{
+                Product[] products= productDao.getProducts();
+                return new ResponseEntity<Product[]>(products,HttpStatus.OK);
+        }
+        catch(IOException e){
+                LOG.log(Level.SEVERE,e.getLocalizedMessage());
+                return new ResponseEntity<Product[]>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    
+
 
 }
