@@ -183,7 +183,7 @@ public class ProductController {
     }
 
     /**
-     * Creates a {@linkplain Product product} with the provided hero object
+     * Creates a {@linkplain Product product} with the provided product object
      * 
      * @param product - The {@link Product product} to create
      * 
