@@ -35,11 +35,12 @@ public class ProductFileDAOTest {
     Product[] testProducts;
 
     ObjectMapper mockObjectMapper;
+   
     /**
-     * Before each test, we will create and inject a Mock Object Mapper to isolate the tests from the underlying file
+     * Before each test, we will create and inject a Mock Object Mapper to
+     * isolate the tests from the underlying file
      * @throws IOException
      */
-
     @BeforeEach
     public void setupProductFileDAO() throws IOException{
         mockObjectMapper = mock(ObjectMapper.class);
@@ -52,12 +53,14 @@ public class ProductFileDAOTest {
         testProducts[2]=new Product(997, "Generic Test Product 3", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
         false);
 
+        // When the object mapper is supposed to read from the file
+        // the mock object mapper will return the product array above
         when(mockObjectMapper.readValue(new File("TEST.txt"), Product[].class)).thenReturn(testProducts);
         productFileDAO = new ProductFileDAO("TEST.txt", mockObjectMapper);
 }
 
     @Test
-    public void testGetHeroes() throws IOException {
+    public void testGetProducts() throws IOException {
         // Invoke
         Product[] product = productFileDAO.getProducts();
 
@@ -67,7 +70,10 @@ public class ProductFileDAOTest {
 
     @Test
     public void testFindProducts() throws IOException{
+        // Invoke
         Product[] products = productFileDAO.findProduct("Generic");
+
+        // Analyze
         assertEquals(products.length, 3);
     }
 
@@ -79,22 +85,35 @@ public class ProductFileDAOTest {
 
     @Test
     public void testDeleteProduct(){
+        // Invoke
         boolean result = assertDoesNotThrow(()->productFileDAO.deleteProduct(99));
 
+        // Analyzez
+        assertEquals(result,true);
+
+        // We check the internal tree map size against the length
+        // of the test products array - 1 (because of the delete)
+        // Because products attribute of ProductFileDAO is package private
+        // we can access it directly
         assertEquals(productFileDAO.Products.size(), testProducts.length-1);
     }
 
     @Test
     public void testCreateProduct() throws IOException{
+        // Setup
         Product product = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
         "Generic Test Room", false);
+
+        // Invoke
         Product result = assertDoesNotThrow(()->productFileDAO.createProduct(product));
+
+        // Analyze
         assertNotNull(result);
         Product actual =productFileDAO.getProduct(99);
         assertEquals(actual.toString(), product.toString());
     }
     @Test
-    public void testUpdateHero() throws IOException{
+    public void testUpdateProduct() throws IOException{
         // Setup
         Product product = new Product(99,"New Name","New Type","New Instructor","0000F",true);
 
@@ -121,7 +140,10 @@ public class ProductFileDAOTest {
     }
     @Test
     public void testGetProductNotFound() throws IOException {
+        // Invoke 
         Product product = productFileDAO.getProduct(98);
+
+        // Analyze
         assertEquals(product,null);
     }
 
@@ -136,15 +158,28 @@ public class ProductFileDAOTest {
     }
 
     @Test
-    public void testUpdateHeroNotFound() {
+    public void testUpdateProductNotFound() {
+        // Setup
         Product product = new Product(96,"New Name","New Type","New Instructor","0000F",true);
+
+        // Invoke
         Product result = assertDoesNotThrow(() -> productFileDAO.updateProduct(product),"Unexpected exception thrown");
+
+        // Analyze
         assertNull(result);
     }
 
     @Test
     public void testConstructorException() throws IOException {
+        // Setup
         ObjectMapper mockObjectMapper = mock(ObjectMapper.class);
+
+        // We want to simulate with a Mock Object Mapper that an
+        // exception was raised during JSON object deseerialization
+        // into Java objects
+        // When the Mock Object Mapper readValue method is called
+        // from the ProductFileDAO load method, an IOException is
+        // raised
         doThrow(new IOException())
             .when(mockObjectMapper)
                 .readValue(new File("doesnt_matter.txt"),Product[].class);
