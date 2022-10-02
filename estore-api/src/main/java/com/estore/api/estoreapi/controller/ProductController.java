@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -49,10 +50,16 @@ public class ProductController {
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-    /**
+ /**
+     * Updates the {@linkplain Product newP} with the provided {@linkplain Product newP} object, if it exists
      * 
+     * @param Product The {@link Product newP} to update
+     * 
+     * @return ResponseEntity with updated {@link Product newP} object and HTTP status of OK if updated<br>
+     * ResponseEntity with HTTP status of NOT_FOUND if not found<br>
+     * ResponseEntity with HTTP status of INTERNAL_SERVER_ERROR otherwise
      */
-    @GetMapping("Product/{Product}")
+    @PutMapping("")
     public ResponseEntity<Product> updateProduct(@PathVariable Product newP){
         LOG.info("PUT   /pruduct "+ newP);
         int id = newP.getID();
