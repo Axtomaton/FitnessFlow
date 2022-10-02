@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -122,6 +123,23 @@ public class ProductController {
         }
     }
 
-
-
+    @PostMapping("/product")
+    public ResponseEntity<Product> CreateProduct(@RequestBody  Product product) {
+        LOG.info("POST /admin/Product");
+        try{
+                Product[] existing = productDao.getProducts();
+                for (Product productexisting:existing){
+                    if (productexisting.getName().equals(product.getName()) || productexisting.getType().equals(product.getType())){
+                        return new ResponseEntity<>(product,HttpStatus.CONFLICT);
+                    }
+                }
+                productDao.createProduct(product);
+                return new ResponseEntity<>(product,HttpStatus.CREATED);
+        }
+        catch(Exception e){
+            LOG.log(Level.SEVERE,e.getLocalizedMessage());
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
 }
