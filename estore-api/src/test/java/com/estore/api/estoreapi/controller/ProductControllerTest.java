@@ -168,17 +168,4 @@ public class ProductControllerTest {
     }
 
 
-    @Test
-    public void testCreateProduct() throws IOException {
-        Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false);
-        Product[] arr = new Product[0];
-        when(mockproductDAO.getProducts()).thenReturn(arr);
-        when(mockproductDAO.createProduct(product)).thenReturn(product);
-
-        ResponseEntity<Product> response = productController.CreateProduct(product);
-
-        assertEquals(HttpStatus.CREATED, response.getStatusCode());
-        assertEquals(product, response.getBody());
-    }
-
 }
