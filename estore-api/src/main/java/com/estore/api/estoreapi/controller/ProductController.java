@@ -182,15 +182,7 @@ public class ProductController {
         }
     }
 
-    /**
-     * Creates a {@linkplain Product product} with the provided product object
-     * 
-     * @param product - The {@link Product product} to create
-     * 
-     * @return ResponseEntity with created {@link Product product} object and HTTP status of CREATED<br>
-     * ResponseEntity with HTTP status of CONFLICT if {@link Product product} object already exists<br>
-     * ResponseEntity with HTTP status of INTERNAL_SERVER_ERROR otherwise
-     */
+
     @PostMapping("/product")
     public ResponseEntity<Product> CreateProduct(@RequestBody  Product product) {
         LOG.info("POST /admin/Product");
@@ -209,6 +201,5 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
 
 }
