@@ -197,7 +197,7 @@ public class ProductController {
         try{
                 Product[] existing = productDao.getProducts();
                 for (Product productexisting:existing){
-                    if (productexisting.getName().equals(product.getName()) || productexisting.getType().equals(product.getType())){
+                    if (productexisting.getName().equals(product.getName()) && productexisting.getType().equals(product.getType())){
                         return new ResponseEntity<>(product,HttpStatus.CONFLICT);
                     }
                 }
