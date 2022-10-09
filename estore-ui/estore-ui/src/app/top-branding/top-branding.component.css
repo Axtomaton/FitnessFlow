@@ -1,0 +1,11 @@
+.top-branding{
+    text-align: center;
+    font-size: 70px;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+span{
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

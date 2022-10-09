@@ -1,0 +1,30 @@
+.navbar {
+    margin: 0;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+}
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.navbar li {
+    display: inline;
+}
+
+.navbar button{
+    width: 25%;
+    height: 40px;
+    text-align: center;
+    font-size: 32px;
+    box-sizing: border-box;
+    padding: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(186, 118, 0);
+    color: white;
+}
+
+.navbar button:hover{
+    background-color: rgb(71, 84, 96);
+}
