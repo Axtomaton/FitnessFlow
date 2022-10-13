@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 /**
  * The unit test suite for the Product class
  * 
- * @author aagmanrelan
  */
 
 @Tag("Model-tier")
@@ -19,13 +18,16 @@ public class ProductTest{
 
     /**
      * Before each test, create a new Product Object (this is the invoke part of the test)
+     * @author Aagman Relan
      */
     @BeforeEach
     public void setProductDetails(){
             this.product = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
             false);
     }
-
+    /**
+     * @author Ivan Lin
+     */
     @Test
     public void testGetID(){
         // Setup
@@ -34,7 +36,9 @@ public class ProductTest{
         // Analyze
         assertEquals(expected_id, this.product.getID());
     }
-
+    /**
+     * @author JianZhuang Jiang
+     */
     @Test
     public void testGetName(){
         // Setup
@@ -43,7 +47,9 @@ public class ProductTest{
         // Analyze
         assertEquals(expected_name, this.product.getName());
     }
-
+    /**
+     * @author Thomas Garcia
+     */
     @Test
     public void testGetType(){
         // Setup
@@ -53,6 +59,9 @@ public class ProductTest{
         assertEquals(expected_type, this.product.getType());
     }
     
+    /**
+     * @author Aagman Relan
+     */
     @Test
     public void testGetInstructor(){
         // Setup
@@ -61,7 +70,9 @@ public class ProductTest{
         // Analyze
         assertEquals(expected_instructor, this.product.getInstructor());
     }
-
+    /**
+     * @author Ivan Lin
+     */
     @Test
     public void testGetRoomNumber(){
         // Setup
@@ -70,7 +81,9 @@ public class ProductTest{
         // Analyze
         assertEquals(expected_Room_Number, this.product.get_Room_Number());
     }
-
+    /**
+     * @author JianZhuang Jiang
+     */
     @Test
     public void testAvailability(){
         // Setup
@@ -80,6 +93,9 @@ public class ProductTest{
         assertEquals(expected_availability, this.product.IsAvailable());
     }
 
+    /**
+     * @author Thomas Garcia
+     */
     @Test
     public void testtoString(){
         // Setup

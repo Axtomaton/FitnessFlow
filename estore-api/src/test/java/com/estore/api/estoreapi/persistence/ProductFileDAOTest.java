@@ -25,7 +25,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * Test the Product File DAO class
  * 
- * @author Aagman Relan
  */
 
 @Tag("Persistence-tier")
@@ -39,6 +38,7 @@ public class ProductFileDAOTest {
     /**
      * Before each test, we will create and inject a Mock Object Mapper to
      * isolate the tests from the underlying file
+     * @author Aagman Relan
      * @throws IOException
      */
     @BeforeEach
@@ -58,7 +58,10 @@ public class ProductFileDAOTest {
         when(mockObjectMapper.readValue(new File("TEST.txt"), Product[].class)).thenReturn(testProducts);
         productFileDAO = new ProductFileDAO("TEST.txt", mockObjectMapper);
 }
-
+    /**
+     * @author Aagman Relan
+     * @throws IOException
+     */
     @Test
     public void testGetProducts() throws IOException {
         // Invoke
@@ -67,7 +70,10 @@ public class ProductFileDAOTest {
         // Analyze
         assertEquals(product.length,testProducts.length);
     }
-
+    /**
+     * @author Ivan Lin
+     * @throws IOException
+     */
     @Test
     public void testFindProducts() throws IOException{
         // Invoke
@@ -76,13 +82,18 @@ public class ProductFileDAOTest {
         // Analyze
         assertEquals(products.length, 3);
     }
-
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
     @Test
     public void testGetProduct() throws IOException{
         Product product = productFileDAO.getProduct(99);
         assertEquals(testProducts[0], product);
     }
-
+    /**
+     * @author Thomas Garcia
+     */
     @Test
     public void testDeleteProduct(){
         // Invoke
@@ -97,7 +108,10 @@ public class ProductFileDAOTest {
         // we can access it directly
         assertEquals(productFileDAO.Products.size(), testProducts.length-1);
     }
-
+    /**
+     * @author Aagman Relan
+     * @throws IOException
+     */
     @Test
     public void testCreateProduct() throws IOException{
         // Setup
@@ -112,6 +126,10 @@ public class ProductFileDAOTest {
         Product actual =productFileDAO.getProduct(99);
         assertEquals(actual.toString(), product.toString());
     }
+    /**
+     * @author Ivan Lin
+     * @throws IOException
+     */
     @Test
     public void testUpdateProduct() throws IOException{
         // Setup
@@ -125,7 +143,10 @@ public class ProductFileDAOTest {
         Product actual = productFileDAO.getProduct(product.getID());
         assertEquals(actual,product);
     }
-
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
     @Test
     public void testSaveException() throws IOException{
         doThrow(new IOException())
@@ -138,6 +159,10 @@ public class ProductFileDAOTest {
                         () -> productFileDAO.createProduct(product),
                         "IOException not thrown");
     }
+    /**
+     * @author Thomas Garcia
+     * @throws IOException
+     */
     @Test
     public void testGetProductNotFound() throws IOException {
         // Invoke 
@@ -146,7 +171,9 @@ public class ProductFileDAOTest {
         // Analyze
         assertEquals(product,null);
     }
-
+    /**
+     * @author Aagman Relan
+     */
     @Test
     public void testDeleteProductNotFound() {
         // Invoke
@@ -156,7 +183,9 @@ public class ProductFileDAOTest {
         assertEquals(result,false);
         assertEquals(productFileDAO.Products.size(),testProducts.length);
     }
-
+    /**
+     * @author Ivan Lin
+     */
     @Test
     public void testUpdateProductNotFound() {
         // Setup
@@ -168,7 +197,10 @@ public class ProductFileDAOTest {
         // Analyze
         assertNull(result);
     }
-
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
     @Test
     public void testConstructorException() throws IOException {
         // Setup
