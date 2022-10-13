@@ -21,7 +21,6 @@ import com.estore.api.estoreapi.persistence.ProductDAO;
  * 
  * Test the Product Controller class
  * 
- * @author aagmanrelan
  */
 
 @Tag("Controller-tier")
@@ -33,12 +32,17 @@ public class ProductControllerTest {
     /**
      * Before each test, create a new ProductController object and inject
      * a mock Product DAO
+     * @author Aagman Relan
      */
     @BeforeEach
     public void setupProductController(){
         mockproductDAO = mock(ProductDAO.class);
         productController = new ProductController(mockproductDAO);
     }
+    /**
+     * @author Aagman Relan
+     * @throws IOException
+     */
 
     @Test
     public void testGetSingleProduct() throws IOException{ // testGetSingleProduct may throw IOException
@@ -57,6 +61,10 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(product, response.getBody());
     }
+    /**
+     * @author Ivan Lin
+     * @throws IOException
+     */
 
     @Test
     public void testSearchProducts() throws IOException{ // findProduct may throw IOException
@@ -80,7 +88,10 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(products.length, response.getBody().length);
     }
-
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
     @Test
     public void testDeleteProduct() throws IOException{ // deleteProduct may throw IOException
 
@@ -97,7 +108,10 @@ public class ProductControllerTest {
         assertEquals("The requested product was successfully Deleted", response.getBody());
 
     }
-
+    /**
+     * @author Thomas Garcia
+     * @throws IOException
+     */
     @Test
     public void testDeleteProductError() throws IOException{ // deleteProduct may throw IOException
 
@@ -110,7 +124,10 @@ public class ProductControllerTest {
         // Analyze
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
     }
-
+    /**
+     * @author Aagman Relan
+     * @throws IOException
+     */
     @Test
     public void testGetInventory() throws IOException{ // getInventory may throw IOException
         // Setup
@@ -130,7 +147,10 @@ public class ProductControllerTest {
         assertEquals(products, response.getBody());
         
     }
-
+    /**
+     * @author Ivan Lin
+     * @throws IOException
+     */
     @Test
     public void testUpdate() throws IOException{ // updateProduct may throw IOException
         // Setup
@@ -148,6 +168,10 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.OK,response.getStatusCode());
     
     }
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
     @Test
     public void testCreateProduct() throws IOException {    // createHero may throw IOException
         // Setup
