@@ -47,11 +47,11 @@ public class ProductFileDAOTest {
         testProducts = new Product[3];
 
         testProducts[0]=new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-        false);
+        false,34.76);
         testProducts[1]=new Product(998, "Generic Test Product 2", "Generic Test Type 2", "Generic Test Instructor 2", "Generic Test Room 2", 
-        true);
+        true,23.45);
         testProducts[2]=new Product(997, "Generic Test Product 3", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-        false);
+        false,98.09);
 
         // When the object mapper is supposed to read from the file
         // the mock object mapper will return the product array above
@@ -116,7 +116,7 @@ public class ProductFileDAOTest {
     public void testCreateProduct() throws IOException{
         // Setup
         Product product = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
-        "Generic Test Room", false);
+        "Generic Test Room", false,34.76);
 
         // Invoke
         Product result = assertDoesNotThrow(()->productFileDAO.createProduct(product));
@@ -133,7 +133,7 @@ public class ProductFileDAOTest {
     @Test
     public void testUpdateProduct() throws IOException{
         // Setup
-        Product product = new Product(99,"New Name","New Type","New Instructor","0000F",true);
+        Product product = new Product(99,"New Name","New Type","New Instructor","0000F",true,12.56);
 
         // Invoke
         Product result = assertDoesNotThrow(() -> productFileDAO.updateProduct(product), "Unexpected exception thrown");
@@ -153,7 +153,7 @@ public class ProductFileDAOTest {
             .when(mockObjectMapper)
                 .writeValue(any(File.class),any(Product[].class));
 
-        Product product = new Product(99,"New Name","New Type","New Instructor","0000F",true);
+        Product product = new Product(99,"New Name","New Type","New Instructor","0000F",true,45.67);
 
         assertThrows(IOException.class,
                         () -> productFileDAO.createProduct(product),
@@ -189,7 +189,7 @@ public class ProductFileDAOTest {
     @Test
     public void testUpdateProductNotFound() {
         // Setup
-        Product product = new Product(96,"New Name","New Type","New Instructor","0000F",true);
+        Product product = new Product(96,"New Name","New Type","New Instructor","0000F",true,56.78);
 
         // Invoke
         Product result = assertDoesNotThrow(() -> productFileDAO.updateProduct(product),"Unexpected exception thrown");
