@@ -5,25 +5,27 @@
   <title>Rochester Gym</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base href="/">
 </head>
   <body>
     <link rel="icon" type="image/x-icon" href="RochesterLogo.png" />
     <nav class="top-navbar">
-      <label class="logo">Rochester Gym</label>
+      <label class="logo"><a routerLink="">Rochester Parkour</a></label>
         <input type="checkbox" id="check">
           <label for = "check" class="checkbtn">
             <i class="fas fa-bars"></i>
       </label>
       <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="about">about</a></li>
-        <li><a href="shoppingcart">shopping cart</a></li>
-        <li><a href="signup">signup</a></li>
-        <li><a href="login">login</a></li>
-        <li><a href="contact">contact</a></li>
+
+        <li><a routerLink="/about" routerLinkActive="active">about</a></li>
+        <li><a routerLink="/shoppingcart" routerLinkActive="active">shopping cart</a></li>
+        <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
+        <li><a routerLink="/login" routerLinkActive="active">login</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active">contact</a></li>
       </ul>
     </nav>
   </body> 
   <section></section>
 </html>
 
+<router-outlet></router-outlet>

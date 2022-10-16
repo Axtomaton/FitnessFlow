@@ -6,11 +6,12 @@ import { SignupComponent } from './signup/signup.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {path: 'shoppingcart', component: ShoppingcartComponent},
   {path: 'login', component:LoginComponent},
   {path: 'contact', component:ContactPageComponent},
-  {path: 'about', component:AboutPageComponent}
+  {path: 'about', component:AboutPageComponent},
+  {path: 'signup',component:SignupComponent}
 ];
 
 @NgModule({
@@ -18,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ShoppingcartComponent, LoginComponent, SignupComponent]
+// export const routingComponents = [ShoppingcartComponent, LoginComponent, SignupComponent,ContactPageComponent,AboutPageComponent]
