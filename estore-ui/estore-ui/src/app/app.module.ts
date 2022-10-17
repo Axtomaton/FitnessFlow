@@ -14,8 +14,11 @@ import { AppRoutingModule } from './app-routing-module';
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationBarComponent,
-    TopBrandingComponent
+    ShoppingcartComponent,
+    SignupComponent,
+    LoginComponent,
+    AboutPageComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,
