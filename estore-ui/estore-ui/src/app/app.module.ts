@@ -9,6 +9,9 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
+import { ProductListsComponent } from './product-lists/product-lists.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import { AppRoutingModule } from './app-routing-module';
     SignupComponent,
     LoginComponent,
     AboutPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    ProductListsComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

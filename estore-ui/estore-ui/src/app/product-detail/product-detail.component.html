@@ -1,0 +1,25 @@
+<div *ngIf="product" class="product-details">
+
+    <h2>{{product.Name }} Details</h2>
+    <div><span>id: </span>{{product.id}}</div>
+    <div>
+      <label for="product-name">Product name: </label>
+      <input id="product-name" [(ngModel)]="product.Name" placeholder="name">
+      <br>
+      <label for="product-instructor">Instructor:</label>
+      <input id="product-instructor" [(ngModel)]="product.Instructor" placeholder="Instructor">
+      <br>
+      <label for="product-instructor">Type:</label>
+      <input id="product-instructor" [(ngModel)]="product.Type" placeholder="Instructor">
+      <br>
+      <label for="product-instructor">Room Number:</label>
+      <input id="product-instructor" [(ngModel)]="product.Room_Number" placeholder="Instructor">
+      <br>
+      <label for="product-instructor">Availability:</label>
+      <input id="product-instructor" [(ngModel)]="product.Available" placeholder="Instructor">
+      <br>
+      <label for="product-instructor">Price:</label>
+      <input id="product-instructor" [(ngModel)]="product.Price" placeholder="Instructor">
+    </div>
+  
+  </div>
