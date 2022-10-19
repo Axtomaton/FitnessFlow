@@ -55,6 +55,7 @@ form {
   
   /* Add padding to containers */
   .container {
+    margin-top: 66px;
     padding: 16px;
   }
   
