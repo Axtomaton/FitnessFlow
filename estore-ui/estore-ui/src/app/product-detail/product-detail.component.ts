@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Product } from 'src/Product';
+
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -14,4 +15,6 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  
 }
