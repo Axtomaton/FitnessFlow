@@ -3,16 +3,6 @@ body {
     text-align: center;
 }
 
-.title{
-    width: auto;
-    color: red;
-    background-color: red;
-    background-color: rebeccapurple;
-    text-align:left;
-
-}
-
-
 
 .center{
     position: relative; left: auto; top: 100px;
@@ -24,7 +14,7 @@ body {
 
 .who-we-are{
     width: 1000px;
-    height: 775px;
+    height: 800px;
     margin: auto;
     background: rgb(214, 226, 219);
     overflow: hidden;
