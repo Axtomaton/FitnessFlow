@@ -1,14 +1,15 @@
-
-body .top-navbar{
-    text-align: center;
-    background: #CCCCFF;
-    height: 80px;
-    width: 100%;
-    margin: 0px;
-    background: #CCCCFF;
+ody .top-navbar{
+  text-align: center;
+  background: #CCCCFF;
+  height: 80px;
+  width: 100%;
+  margin: 0px;
+  background: #CCCCFF;
 }
-.logo a{
-    color: black;
+body .logo{
+    color:#321cc5;
+    text-align: left;
+    position:relative
 }
 .top-navbar{
     position:fixed;
@@ -100,7 +101,6 @@ body .top-navbar{
       height: 100vh;
       background: #2c3e50;
       top: 80px;
-      left: -100%;
       text-align: center;
       transition: all .5s;
     }
