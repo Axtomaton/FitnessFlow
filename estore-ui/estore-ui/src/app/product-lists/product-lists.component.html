@@ -1,19 +1,16 @@
 <p>product-lists works!</p>
 <div class="product-list">
 <h2>My Products</h2>
-<label for="search">Search:</label>
-<div class="detail">
-    <app-product-detail [product]="selectedProduct"></app-product-detail>
-</div>
 
-<input type="text" id="search" name="searxh">
-<button class="btn-search" >Search</button>
 <ul >
     <li *ngFor="let product of products">
-    <button [class.selected]="product===selectedProduct" type="button" (click)="onSelect(product)"> 
-        <span class="badge">{{product.id}}</span>
-        <br>
-        <span class="name">{{product.Name}}</span>
+
+    <button> 
+        <a routerLink="/detail/{{product.id}}">
+            <span class="badge">{{product.id}}</span>
+            <br>
+            <span class="name">{{product.Name}}</span>
+        </a>
     </button>
     </li>
 
