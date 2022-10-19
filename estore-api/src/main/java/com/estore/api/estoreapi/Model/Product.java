@@ -23,13 +23,14 @@ public class Product {
     private String Instructor;
     private String Room_Number;
     private boolean Available;
+    private double Price;
 
     /**
      * {@inheritDoc}
      */
     @Override
     public String toString() {
-        String Product="Product(ID:"+id+", Name:"+Name+", Type:"+Type+", Instructor:"+Instructor+", Room:"+Room_Number+", Available:"+Available+")";
+        String Product="Product(ID:"+id+", Name:"+Name+", Type:"+Type+", Instructor:"+Instructor+", Room:"+Room_Number+", Available:"+Available+", Price:"+Price+")";
         return Product;
     }
 
@@ -44,13 +45,14 @@ public class Product {
      * value, i.e. 0 for int
      */
     public Product(@JsonProperty("id") int id, @JsonProperty("Name") String Name, @JsonProperty("Type") String Type, @JsonProperty("Instructor") String Instructor, 
-                        @JsonProperty("Room_Number") String Room_Number, @JsonProperty("Available") boolean Available) {
+                        @JsonProperty("Room_Number") String Room_Number, @JsonProperty("Available") boolean Available,@JsonProperty("Price")double Price) {
         this.id = id;
         this.Name = Name;
         this.Type = Type;
         this.Instructor = Instructor;
         this.Room_Number= Room_Number;
         this.Available = Available;
+        this.Price = Price;
     }
 
     /**
@@ -106,6 +108,15 @@ public class Product {
     public boolean IsAvailable(){
         return Available;
     }
+    /**
+     * Retrieves the Price of the Product
+     * @return The Price of the Product
+     */
+    @JsonProperty("Price")
+        public double getPrice(){
+            return Price;
+        }
+    
 
     /**
      * Sets the name of the product - necessary for JSON object to Java object deserialization
@@ -145,5 +156,12 @@ public class Product {
      */
     public void setAvailability(boolean Available){
         this.Available=Available;
+    }
+    /**
+     * Sets the new price for the product
+     * @param Price The new price for the product
+     */
+    public void setPrice(double Price){
+        this.Price=Price;
     }
 }

@@ -23,7 +23,7 @@ public class ProductTest{
     @BeforeEach
     public void setProductDetails(){
             this.product = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-            false);
+            false,123.56);
     }
     /**
      * @author Ivan Lin

@@ -49,7 +49,7 @@ public class ProductControllerTest {
 
         // setup
         Product product = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-        false);
+        false,123.65);
 
         // When the same id is passed in, our mock Product DAO will return the Product object
         when(mockproductDAO.getProduct(product.getID())).thenReturn(product);
@@ -72,9 +72,9 @@ public class ProductControllerTest {
         // Setup
         Product[] products = new Product[2];
         products[0] = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
-        "Generic Test Room", false);
+        "Generic Test Room", false,234.56);
         products[1] = new Product(998, "Test Product", " est Type", "Generic Test Instructor", 
-        "Generic Test Room", true);
+        "Generic Test Room", true,546.78);
         String name="odu";
 
         // When findProduct is called with the search string, return the two
@@ -97,7 +97,7 @@ public class ProductControllerTest {
 
         // when deleteProduct is called return true, simulating successful deletion
         when(mockproductDAO.getProduct(0)).thenReturn(new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
-                   "Generic Test Room", false));
+                   "Generic Test Room", false,123.45));
         when(mockproductDAO.deleteProduct(0)).thenReturn(true);
 
         // Invoke
@@ -133,7 +133,7 @@ public class ProductControllerTest {
         // Setup
         Product[] products = new Product[5];
         for(int i=0;i<5;i++){
-            products[i] = new Product(i, "Generic", "Generic", "Generic", "Generic", false);
+            products[i] = new Product(i, "Generic", "Generic", "Generic", "Generic", false,43.67);
         }
 
         // When getInventory is called return the products created above
@@ -154,7 +154,7 @@ public class ProductControllerTest {
     @Test
     public void testUpdate() throws IOException{ // updateProduct may throw IOException
         // Setup
-        Product product = new Product(99, "Generic", "Generic", "Generic", "Generic", false);
+        Product product = new Product(99, "Generic", "Generic", "Generic", "Generic", false,123.76);
 
         // when updateProduct is called, return true simulating successful
         // update and save
@@ -175,7 +175,7 @@ public class ProductControllerTest {
     @Test
     public void testCreateProduct() throws IOException {    // createHero may throw IOException
         // Setup
-        Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false);
+        Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false,123.76);
         Product[] arr = new Product[0];
 
         // when createHero is called, return true simulating successful
