@@ -3,7 +3,18 @@ body {
     text-align: center;
 }
 
+.story{
+    font-family: monospace;
+    color: rgb(42, 181, 209);
+    font-size: 20px;
+}
 
+.break-text{
+    display: block;
+    margin: 10px 0;
+    line-height:22px;
+    content: " ";
+}
 .center{
     position: relative; left: auto; top: 100px;
     display: block;
