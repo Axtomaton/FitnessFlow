@@ -9,20 +9,21 @@
       <label for="product-instructor">Instructor:</label>
       <input id="product-instructor" [(ngModel)]="product.Instructor" placeholder="Instructor">
       <br>
-      <label for="product-instructor">Type:</label>
-      <input id="product-instructor" [(ngModel)]="product.Type" placeholder="Instructor">
+      <label for="product-type">Type:</label>
+      <input id="product-type" [(ngModel)]="product.Type" placeholder="Instructor">
       <br>
-      <label for="product-instructor">Room Number:</label>
-      <input id="product-instructor" [(ngModel)]="product.Room_Number" placeholder="Instructor">
+      <label for="product-room">Room Number:</label>
+      <input id="product-room" [(ngModel)]="product.Room_Number" placeholder="Instructor">
       <br>
-      <label for="product-instructor">Availability:</label>
-      <input id="product-instructor" [(ngModel)]="product.Available" placeholder="Instructor">
+      <label for="product-aval">Availability:</label>
+      <input id="product-aval" [(ngModel)]="product.Available" placeholder="Instructor">
       <br>
-      <label for="product-instructor">Price:</label>
-      <input id="product-instructor" [(ngModel)]="product.Price" placeholder="Instructor">
+      <label for="product-price">Price:</label>
+      <input id="product-price" [(ngModel)]="product.Price" placeholder="Instructor">
     </div>
-    <!-- <button type="button" (click)="save()">save</button> -->
-
+    
     <button type="button" class="delete" title="delete hero"
     (click)="delete(product)">Delete This Product</button>
+
+    <button type="button" class="save" (click)="save()">save</button>
   </div>

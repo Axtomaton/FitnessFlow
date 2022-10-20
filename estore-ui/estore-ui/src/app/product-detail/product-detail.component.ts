@@ -37,5 +37,12 @@ export class ProductDetailComponent implements OnInit {
     this.productservice.getProduct(id)
       .subscribe(product => this.product = product);
   }
+
+  save(): void {
+    if (this.product) {
+      this.productservice.updateProduct(this.product)
+        .subscribe(() => this.goBack());
+    }
+  }
   
 }
