@@ -13,6 +13,7 @@ import { ProductListsComponent } from './product-lists/product-lists.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AddProductPageComponent } from './add-product-page/add-product-page.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutPageComponent,
     ContactPageComponent,
     ProductListsComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    AddProductPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 .product-list{
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left:10em;
 }
 .product-list button{
@@ -13,4 +13,12 @@
 .detail{
     float: right;
     margin-right: 100px;
+}
+.product-list .add{
+    float: right;
+    margin-right: 800px;
+}
+.product-list a{
+    text-decoration: none;
+    color: black;
 }
