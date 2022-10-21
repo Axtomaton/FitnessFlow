@@ -1,10 +1,59 @@
+body {
+    height: 300px;
+    text-align: center;
+}
+
+.story{
+    font-family: monospace;
+    color: rgb(42, 181, 209);
+    font-size: 20px;
+}
+
+.break-text{
+    display: block;
+    margin: 10px 0;
+    line-height:22px;
+    content: " ";
+}
+.center{
+    position: relative; left: auto; top: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.who-we-are{
+    width: 1000px;
+    height: 800px;
+    margin: auto;
+    background: rgb(214, 226, 219);
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 50px;
+    z-index: 2;
+    box-sizing: border-box;
+    padding: 30px;
+    box-shadow: -10px 25px 50px rgb(56, 55, 56);
+    margin-bottom: 1rem;
+    font-size: 20px;
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    position: relative; left: auto; top: 100px;
+    
+
+}
+
+
 .about-page{
+
     width: 75%;
     margin: auto;
     margin-top: 100px;
     margin-bottom: 1rem;
     font-size: 26px;
-    text-align: justify;
+    text-align:center;
     font-family:Arial, Helvetica, sans-serif;
     line-height: 1.5;
 

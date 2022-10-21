@@ -6,7 +6,6 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { AboutPageComponent } from './about-page/about-page.component';
-import { ContactPageComponent } from './contact-page/contact-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
 import { ProductListsComponent } from './product-lists/product-lists.component';
@@ -23,7 +22,6 @@ import { AddProductPageComponent } from './add-product-page/add-product-page.com
     SignupComponent,
     LoginComponent,
     AboutPageComponent,
-    ContactPageComponent,
     ProductListsComponent,
     ProductDetailComponent,
     AddProductPageComponent
