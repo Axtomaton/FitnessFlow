@@ -1,0 +1,22 @@
+<div *ngIf="product" class="product-details">
+
+    <h2>{{product.Name }} Details</h2>
+    <div><span>id: </span>{{product.id}}</div>
+    <div>
+      <label for="product-name">Product name: </label>
+      {{product.Name}}
+      <br>
+      <label for="product-instructor">Instructor:</label>
+      {{product.Instructor}}      <br>
+      <label for="product-type">Type:</label>
+      {{product.Type}}      <br>
+      <label for="product-room">Room Number:</label>
+      {{product.Room_Number}}      <br>
+      <label for="product-aval">Availability:</label>
+      {{product.Available}}      <br>
+      <label for="product-price">Price:</label>
+      {{product.Price}}    </div>
+    
+
+    <button type="button" class="save" (click)="addToCart()">Add to cart</button>
+  </div>

@@ -13,7 +13,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddProductPageComponent } from './add-product-page/add-product-page.component';
-
+import { CustomerViewComponent } from './customer-view/customer-view.component';
+import { ProductDetailCustomerComponent } from './product-detail-customer/product-detail-customer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,10 @@ import { AddProductPageComponent } from './add-product-page/add-product-page.com
     AboutPageComponent,
     ProductListsComponent,
     ProductDetailComponent,
-    AddProductPageComponent
+    AddProductPageComponent,
+    CustomerViewComponent,
+    ProductDetailCustomerComponent
+    
   ],
   imports: [
     BrowserModule,
