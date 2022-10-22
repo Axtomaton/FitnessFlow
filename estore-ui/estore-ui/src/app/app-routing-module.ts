@@ -21,10 +21,10 @@ export const routes: Routes = [
 
   {path: 'home', component:HomePageComponent},
   {path: 'orderconfirmed', component:OrderConfirmationPageComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}];
-  {path: 'detail/:id',component:ProductDetailComponent},
-  {path: 'newProduct',component:AddProductPageComponent},
-  {path: 'adminView',component:ProductListsComponent}
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'detail/:id', component:ProductDetailComponent},
+  {path: 'newProduct', component:AddProductPageComponent},
+  {path: 'adminView', component:ProductListsComponent}
 ];
 
 
