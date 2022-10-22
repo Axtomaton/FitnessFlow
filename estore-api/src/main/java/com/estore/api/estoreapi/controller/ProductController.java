@@ -79,7 +79,6 @@ public class ProductController {
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
     /**
      * Updates the {@linkplain Product product} with the provided {@linkplain Product product} object, if it exists
      * 
@@ -89,8 +88,8 @@ public class ProductController {
      * ResponseEntity with HTTP status of NOT_FOUND if not found<br>
      * ResponseEntity with HTTP status of INTERNAL_SERVER_ERROR otherwise
      */
-    @PutMapping("/product")
-    public ResponseEntity<Product> updateProduct(@RequestBody Product newP){
+    @PutMapping("")
+    public ResponseEntity<Product> updateProduct(@PathVariable Product newP){
         LOG.info("PUT   /pruduct "+ newP);
         int id = newP.getID();
         try{

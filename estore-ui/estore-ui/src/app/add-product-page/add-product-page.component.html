@@ -1,0 +1,22 @@
+<div class="add-product">
+    <label for="new-product">Name: </label>
+    <input id="new-product" #Name required/>
+<br>
+    <label for="new-type">Type: </label>
+    <input id="new-type" #Type required/>
+<br>
+    <label for="new-instructor">Instructor: </label>
+    <input id="new-instructor" #Instructor required/>
+<br>
+    <label for="new-room">Room Number: </label>
+    <input id="new-room" #Room required/>
+<br>
+    <label for="new-price">Price: </label>
+    <input id="new-price" #Price required/>
+<br>
+
+<button class="add-product-btn"(click)="add(Name.value,Instructor.value,Type.value,Price.value,Room.value);
+Name.value=''; Instructor.value='';Type.value='';Price.value='';Room.value='';">Add Product</button>
+<button class="go-back" (click)="goBack()">Go Back</button>
+  
+</div>
