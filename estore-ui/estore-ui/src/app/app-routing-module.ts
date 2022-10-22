@@ -10,7 +10,12 @@ import { OrderConfirmationPageComponent } from './order-confirmation-page/order-
 
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddProductPageComponent } from './add-product-page/add-product-page.component';
+
+import { ProductDetailCustomerComponent } from './product-detail-customer/product-detail-customer.component';
+import { CustomerViewComponent } from './customer-view/customer-view.component'
+
 import { ProductListsComponent } from './product-lists/product-lists.component';
+
 
 
 export const routes: Routes = [
@@ -19,12 +24,17 @@ export const routes: Routes = [
   {path: 'about', component:AboutPageComponent},
   {path: 'signup',component:SignupComponent},
 
+  {path: 'detail/:id',component:ProductDetailComponent},
+  {path: 'newProduct',component:AddProductPageComponent},
+  {path: 'customer/:id',component:ProductDetailCustomerComponent}
+
   {path: 'home', component:HomePageComponent},
   {path: 'orderconfirmed', component:OrderConfirmationPageComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'detail/:id', component:ProductDetailComponent},
   {path: 'newProduct', component:AddProductPageComponent},
   {path: 'adminView', component:ProductListsComponent}
+
 ];
 
 
