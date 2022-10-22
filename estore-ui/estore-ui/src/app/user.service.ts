@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +14,8 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
+  private cart:Array<Number>=[];
+
   userLogin(user:String,pass:String):void{
       
     const  body:userInformation={
@@ -26,15 +27,23 @@ export class UserService {
           this.router.navigate(['/adminView'])
         }
         else{
-          this.router.navigate(['/adminView'])
+          this.router.navigate(['/customerView'])
         }
       }));
   }
 
   userSignup():void{
-    
+    this.router.navigate(['customerView'])
   }
+  addToCart(id:number):void{
+    this.cart.push(id)
+  }
+  returnCart():Array<Number>{
+    return this.cart;
+  }
+
 }
+
 interface userInformation{
   Username:String,
   Password:String,

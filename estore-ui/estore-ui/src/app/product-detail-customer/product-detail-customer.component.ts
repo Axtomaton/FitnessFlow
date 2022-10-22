@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/Product';
 import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-product-detail-customer',
@@ -16,7 +17,8 @@ export class ProductDetailCustomerComponent implements OnInit {
   constructor(
     private productservice:ProductService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private userservice:UserService
     ) { }
 
 
@@ -24,11 +26,6 @@ export class ProductDetailCustomerComponent implements OnInit {
     this.getProduct();
   }
 
-  delete(product:Product){
-    if(this.product){
-      this.productservice.deleteProduct(this.product.id).subscribe(()=>this.goBack());
-    }
-  }
   goBack():void{
     this.location.back();
   }
@@ -38,10 +35,8 @@ export class ProductDetailCustomerComponent implements OnInit {
       .subscribe(product => this.product = product);
   }
 
-  addToCart(): void {
-    if (this.product) {
-      this.productservice.updateProduct(this.product)
-        .subscribe(() => this.goBack());
-    }
+  addToCart(id:number): void {
+    this.userservice.addToCart(id);
+    this.goBack();
   }
 }

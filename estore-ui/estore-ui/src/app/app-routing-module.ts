@@ -26,14 +26,14 @@ export const routes: Routes = [
 
   {path: 'detail/:id',component:ProductDetailComponent},
   {path: 'newProduct',component:AddProductPageComponent},
-  {path: 'customer/:id',component:ProductDetailCustomerComponent}
-
+  {path: 'customer/:id',component:ProductDetailCustomerComponent},
   {path: 'home', component:HomePageComponent},
   {path: 'orderconfirmed', component:OrderConfirmationPageComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'detail/:id', component:ProductDetailComponent},
   {path: 'newProduct', component:AddProductPageComponent},
-  {path: 'adminView', component:ProductListsComponent}
+  {path: 'adminView', component:ProductListsComponent},
+  {path: 'customerView',component:CustomerViewComponent}
 
 ];
 

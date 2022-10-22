@@ -6,10 +6,7 @@
               <i class="fas fa-bars"></i>
         </label>
         <ul>
-          <li><a routerLink="/about" routerLinkActive="active">about</a></li>
-          <li><a routerLink="/shoppingcart" routerLinkActive="active">shopping cart</a></li>
-          <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
-          <li><a routerLink="/login" routerLinkActive="active">login</a></li>
+          <li><a routerLink="/home" routerLinkActive="active">Log Out</a></li>
         </ul>
       </nav>
 
@@ -23,7 +20,15 @@
         </tr>
 
       </td>
+
+
+
+
       <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">submit</a>
       
-
+      <ul>
+        <li *ngFor="let item of shoppingcart">
+          {{item}}
+        </li>
+      </ul>
 </body>
