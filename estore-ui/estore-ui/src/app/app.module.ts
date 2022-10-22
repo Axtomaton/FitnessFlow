@@ -8,6 +8,11 @@ import { LoginComponent } from './login/login.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
+import { ProductListsComponent } from './product-lists/product-lists.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AddProductPageComponent } from './add-product-page/add-product-page.component';
 
 
 @NgModule({
@@ -17,11 +22,16 @@ import { AppRoutingModule } from './app-routing-module';
     SignupComponent,
     LoginComponent,
     AboutPageComponent,
+    ProductListsComponent,
+    ProductDetailComponent,
+    AddProductPageComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

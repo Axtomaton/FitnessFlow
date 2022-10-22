@@ -1,0 +1,38 @@
+.add-product{
+    margin-top: 100px;
+    margin-left: 40%;
+    margin-right: auto;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.add-product input{
+    margin: 10px;
+}
+.add-product #new-product{
+    margin-left: 70px;
+}
+
+.add-product #new-type{
+    margin-left: 78px;
+}
+
+.add-product #new-instructor{
+    margin-left: 45px;
+}
+.add-product #new-room{
+    margin-left: 8px;
+}
+.add-product #new-price{
+    margin-left: 76px;
+}
+.add-product-btn{
+    width: 80px;
+    height: 40px;
+    margin: auto;
+}
+.go-back{
+    width: 80px;
+    height: 40px;
+    margin: auto;
+    margin-left: 100px;
+}

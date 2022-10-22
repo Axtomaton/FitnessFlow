@@ -1,0 +1,23 @@
+<p>product-lists works!</p>
+<div class="product-list">
+<h2>My Products</h2>
+    <a routerLink="/newProduct">
+        <button class="add">
+        Add Product
+    </button>
+    </a>
+
+<ul >
+    <li *ngFor="let product of products">
+        <a routerLink="/detail/{{product.id}}">
+            <button> 
+            <span class="badge">{{product.id}}</span>
+            <br>
+            <span class="name">{{product.Name}}</span>
+        </button>
+        </a>
+    </li>
+</ul>
+
+</div>
+
