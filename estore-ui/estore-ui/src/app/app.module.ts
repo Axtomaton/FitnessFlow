@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { OrderConfirmationPageComponent } from './order-confirmation-page/order-confirmation-page.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { AppRoutingModule } from './app-routing-module';
     SignupComponent,
     LoginComponent,
     AboutPageComponent,
+    HomePageComponent,
+    OrderConfirmationPageComponent,
   ],
   imports: [
     BrowserModule,
