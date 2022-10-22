@@ -14,7 +14,7 @@
     </div>
   
     <div class="container" style="background-color:#f1f1f1">
-      <button type ="button" class="loginbtn" style="float: right;" (click)="user.value='';pass.value='';">Login</button> 
+      <button type ="button" class="loginbtn" style="float: right;" (click)=" doLogin(user.value,pass.value);user.value='';pass.value=''; ">Login</button> 
       <button type="button" class="cancelbtn" (click)="user.value='';pass.value=''"> Cancel</button>
       
     </div>
