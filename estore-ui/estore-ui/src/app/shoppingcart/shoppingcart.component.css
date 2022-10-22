@@ -1,84 +1,23 @@
+.submit-button{
+display: flex;
+position: relative; top:300px;
+margin: auto;
+width: 70px;
+height: 30px;
+font-size: 20px;
+border-radius: 12px;
+background-color:paleturquoise;
+color: white;
+text-align:center; 
+line-height: 30px;
+}
 
-body .top-navbar{
-    text-align: center;
-    background: #CCCCFF;
-    height: 80px;
-    width: 100%;
-    margin: 0px;
-    background: #CCCCFF;
+.products-in-cart{
+  margin: auto;
+  height: 300px;
+  width: 50%;
+  position: relative; top: 150px;
+  background-color: grey;
+  border: 3px;
+  padding: 10px;
 }
-.logo a{
-    color: black;
-}
-.top-navbar{
-    position:fixed;
-    text-align: c;
-    top: 0;
-    background: #CCCCFF;
-    height: 80px;
-    width: 100%;
-    margin: 0px;
-    background: #CCCCFF;
-}
-*{
-    padding: 0;
-    margin: 0px;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  body{
-    margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: 	#ded0c8	;
-  }
-
-  body nav{
-    background: #ded0c8;
-    height: 160px;
-    width: 100%;
-  }
-  
-  label.logo{
-    color: black;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-  }
-  nav ul{
-    float: right;
-    margin-right: 20px;
-  }
-  nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-  }
-  nav ul li a{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: black;
-    font-size: 17px;
-    padding: 10px 13px;
-    border-radius: 3px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  a.active,a:hover{
-    background: #1b9bff;
-    transition: .5s;
-  }
-  .checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-  }
-  #check{
-    display: none;
-  }
-  

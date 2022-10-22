@@ -8,11 +8,14 @@ import { LoginComponent } from './login/login.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { OrderConfirmationPageComponent } from './order-confirmation-page/order-confirmation-page.component';
 import { ProductListsComponent } from './product-lists/product-lists.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddProductPageComponent } from './add-product-page/add-product-page.component';
+
 
 
 @NgModule({
@@ -22,6 +25,8 @@ import { AddProductPageComponent } from './add-product-page/add-product-page.com
     SignupComponent,
     LoginComponent,
     AboutPageComponent,
+    HomePageComponent,
+    OrderConfirmationPageComponent,
     ProductListsComponent,
     ProductDetailComponent,
     AddProductPageComponent

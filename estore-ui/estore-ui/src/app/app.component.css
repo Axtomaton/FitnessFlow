@@ -68,6 +68,19 @@ a.active,a:hover{
   cursor: pointer;
   display: none;
 }
+
+
+.footer{
+  position: relative; top:300px;
+}
+
+
+
+
+
+
+
+
 #check{
   display: none;
 }
