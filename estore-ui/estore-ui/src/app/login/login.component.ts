@@ -13,6 +13,12 @@ export class LoginComponent implements OnInit {
   }
 
   doLogin(user:String,pass:String):void{
-    this.userservice.userLogin(user,pass)
+    if(user=="" || pass==""){
+
+    }
+    else{
+      this.userservice.userLogin(user,pass)
+    }
+    
   }
 }

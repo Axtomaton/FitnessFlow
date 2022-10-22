@@ -25,11 +25,16 @@ export class UserService {
         if(isAdmin){
           this.router.navigate(['/adminView'])
         }
+        else{
+          this.router.navigate(['/adminView'])
+        }
       }));
   }
 
+  userSignup():void{
+    
+  }
 }
-
 interface userInformation{
   Username:String,
   Password:String,
