@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing-module';
+import { HomePageComponent } from './home-page/home-page.component';
+import { OrderConfirmationPageComponent } from './order-confirmation-page/order-confirmation-page.component';
 import { ProductListsComponent } from './product-lists/product-lists.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule } from '@angular/forms';
@@ -16,6 +18,7 @@ import { AddProductPageComponent } from './add-product-page/add-product-page.com
 import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { ProductDetailCustomerComponent } from './product-detail-customer/product-detail-customer.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +26,8 @@ import { ProductDetailCustomerComponent } from './product-detail-customer/produc
     SignupComponent,
     LoginComponent,
     AboutPageComponent,
+    HomePageComponent,
+    OrderConfirmationPageComponent,
     ProductListsComponent,
     ProductDetailComponent,
     AddProductPageComponent,
