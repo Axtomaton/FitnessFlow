@@ -10,25 +10,26 @@
         </ul>
       </nav>
 
+      <h1 class="order-summary">Order Summary</h1>
+
+
+
       <div class="products-in-cart">
+        <table>
+          <tr>
+            <th class="product-id">Product ID</th>
+          </tr>
+            <tr class="items" *ngFor="let item of shoppingcart">
+              <td>{{item}}</td>  
+        </table>
 
+        <h3 class="Total-Price">Total: ${{totalcost}}</h3>
 
-      </div>
-      <td>
-        <tr>
-          
-        </tr>
-
-      </td>
-
-
-
-
-      <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">submit</a>
       
-      <ul>
-        <li *ngFor="let item of shoppingcart">
-          {{item}}
-        </li>
-      </ul>
+      </div>
+
+
+      <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button" >submit</a>
+      
+      
 </body>

@@ -1,23 +1,66 @@
 .submit-button{
-display: flex;
-position: relative; top:300px;
+position: relative; 
+top:760px;
+transform: translate(-50%, -50%);
 margin: auto;
 width: 70px;
 height: 30px;
 font-size: 20px;
 border-radius: 12px;
-background-color:paleturquoise;
+background-color:rgb(190, 222, 222);
 color: white;
-text-align:center; 
-line-height: 30px;
+display: table-cell;
+left: 1000px;
+position: fixed; 
+font-size: 21px;
+text-align: center;
+vertical-align: auto;
+
+
+
 }
 
 .products-in-cart{
   margin: auto;
-  height: 300px;
+  height: 600px;
   width: 50%;
   position: relative; top: 150px;
   background-color: grey;
   border: 3px;
   padding: 10px;
+  margin: auto;
+}
+
+
+
+.order-summary{
+  position: relative; 
+  top: 150px;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+
+  
+}
+.Total-Price{
+  position: fixed; 
+  top:750px;
+  left: 550px;
+  margin: auto;
+  width: 70px;
+  height: 30px;
+  white-space: nowrap;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.product-id{
+  background-color: aliceblue;
+  font-family:sans-serif;
+  width: 70px;
+  white-space: nowrap;
+
+
+}
+.items{
+  background-color: antiquewhite;
+  text-align: center;
 }

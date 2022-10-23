@@ -1,6 +1,8 @@
 .product-list{
     margin-top: 70px;
     margin-left:10em;
+    position: relative;
+    top: 39px;
 }
 .product-list button{
     height:40px;
