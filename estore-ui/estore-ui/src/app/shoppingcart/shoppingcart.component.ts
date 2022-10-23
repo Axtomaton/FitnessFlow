@@ -9,9 +9,13 @@ import { UserService } from '../user.service';
 export class ShoppingcartComponent implements OnInit {
 
   constructor(private userservice:UserService) { }
+
   shoppingcart:Array<Number> = []
+  totalcost:number=0
+
   ngOnInit(): void {
     this.getCart();
+    this.getTotal();
   }
 
   addToCart(id:number):void{
@@ -20,6 +24,9 @@ export class ShoppingcartComponent implements OnInit {
 
   getCart():void{
     this.shoppingcart=this.userservice.returnCart();
+  }
+  getTotal():void{
+    this.totalcost=this.userservice.returnTotal();
   }
 
 }

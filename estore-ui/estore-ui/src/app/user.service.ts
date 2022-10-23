@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ProductService } from './product.service';
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient,private router: Router) { }
+  constructor(private http: HttpClient,private router: Router,
+    private productservice:ProductService) { }
 
   private baseUrl='http://localhost:8080/user/'
 
@@ -15,7 +17,7 @@ export class UserService {
   };
 
   private cart:Array<Number>=[];
-
+  private total:number=0;
   userLogin(user:String,pass:String):void{
       
     const  body:userInformation={
@@ -37,9 +39,15 @@ export class UserService {
   }
   addToCart(id:number):void{
     this.cart.push(id)
+    this.productservice.getProduct(id).subscribe((product)=>{
+      this.total+=product.Price;
+    });
   }
   returnCart():Array<Number>{
     return this.cart;
+  }
+  returnTotal():number{
+    return this.total;
   }
 
 }
