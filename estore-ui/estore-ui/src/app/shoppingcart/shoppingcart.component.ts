@@ -13,9 +13,10 @@ export class ShoppingcartComponent implements OnInit {
 
   shoppingcart:Array<Number> = []
   totalcost:number=0
-
+ 
   ngOnInit(): void {
     this.getCart();
+    this.getTotal();
   }
 
   addToCart(id:number):void{
@@ -25,6 +26,11 @@ export class ShoppingcartComponent implements OnInit {
 
   getCart():void{
     this.shoppingcart=this.userservice.returnCart();
+  }
+
+  getTotal():void{
+    let c = parseFloat(this.userservice.returnTotal().toFixed(2));
+    this.totalcost = c;
   }
 
 }
