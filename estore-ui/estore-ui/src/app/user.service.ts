@@ -42,7 +42,6 @@ export class UserService {
     this.productservice.getProduct(id).subscribe((product)=>{
       this.total+=product.Price;
     });
-
   }
   returnCart():Array<Number>{
     return this.cart;
