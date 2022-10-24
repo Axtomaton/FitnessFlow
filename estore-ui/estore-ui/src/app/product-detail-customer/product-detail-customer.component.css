@@ -1,0 +1,36 @@
+.product-details{
+    margin-top:150px;
+    margin-left: 50px;
+    line-height: 1.5em;
+}
+#product-instructor{
+    margin-left: 42px;
+}
+#product-type{
+    margin-left: 73px;
+}
+#product-name{
+    margin-left: 5px;
+}
+#product-room{
+    margin-left: 3px;
+}
+#product-aval{
+    margin-left: 32px;
+}
+#product-price{
+    margin-left: 70px;
+}
+.delete{
+    margin-top: 20px;
+    height: 30px;
+    padding: 5px;
+}
+.save{
+    padding: 2px;
+    height: 30px;
+    width: 75px;
+}
+.div{
+    margin-top: 150px;
+}

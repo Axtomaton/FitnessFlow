@@ -1,84 +1,66 @@
+.submit-button{
+position: relative; 
+top:760px;
+transform: translate(-50%, -50%);
+margin: auto;
+width: 70px;
+height: 30px;
+font-size: 20px;
+border-radius: 12px;
+background-color:rgb(190, 222, 222);
+color: white;
+display: table-cell;
+left: 1000px;
+position: fixed; 
+font-size: 21px;
+text-align: center;
+vertical-align: auto;
 
-body .top-navbar{
-    text-align: center;
-    background: #CCCCFF;
-    height: 80px;
-    width: 100%;
-    margin: 0px;
-    background: #CCCCFF;
-}
-.logo a{
-    color: black;
-}
-.top-navbar{
-    position:fixed;
-    text-align: c;
-    top: 0;
-    background: #CCCCFF;
-    height: 80px;
-    width: 100%;
-    margin: 0px;
-    background: #CCCCFF;
-}
-*{
-    padding: 0;
-    margin: 0px;
-    text-decoration: none;
-    list-style: none;
-    box-sizing: border-box;
-  }
-  body{
-    margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    background: 	#ded0c8	;
-  }
 
-  body nav{
-    background: #ded0c8;
-    height: 160px;
-    width: 100%;
-  }
+
+}
+
+.products-in-cart{
+  margin: auto;
+  height: 600px;
+  width: 50%;
+  position: relative; top: 150px;
+  background-color: grey;
+  border: 3px;
+  padding: 10px;
+  margin: auto;
+}
+
+
+
+.order-summary{
+  position: relative; 
+  top: 150px;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+
   
-  label.logo{
-    color: black;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
-  }
-  nav ul{
-    float: right;
-    margin-right: 20px;
-  }
-  nav ul li{
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-  }
-  nav ul li a{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: black;
-    font-size: 17px;
-    padding: 10px 13px;
-    border-radius: 3px;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-  a.active,a:hover{
-    background: #1b9bff;
-    transition: .5s;
-  }
-  .checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-  }
-  #check{
-    display: none;
-  }
-  
+}
+.Total-Price{
+  position: fixed; 
+  top:750px;
+  left: 550px;
+  margin: auto;
+  width: 70px;
+  height: 30px;
+  white-space: nowrap;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.product-id{
+  background-color: aliceblue;
+  font-family:sans-serif;
+  width: 70px;
+  white-space: nowrap;
+
+
+}
+.items{
+  background-color: antiquewhite;
+  text-align: center;
+}

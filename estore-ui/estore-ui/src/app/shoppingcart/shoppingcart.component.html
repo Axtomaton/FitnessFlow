@@ -1,1 +1,28 @@
-<p>shoppingcart works!</p>
+<body>
+    <nav class="top-navbar">
+        <label class="logo"><a routerLink="">Rochester Parkour</a></label>
+          <input type="checkbox" id="check">
+            <label for = "check" class="checkbtn">
+              <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a routerLink="/home" routerLinkActive="active">Log Out</a></li>
+        </ul>
+      </nav>
+
+      <h1 class="order-summary">Order Summary</h1>
+
+
+<div class="products-in-cart">
+      <div class="products-in-cart">
+        <table>
+          <tr>
+            <th class="product-id">Product ID</th>
+          </tr>
+            <tr class="items" *ngFor="let item of shoppingcart">
+              <td>{{item}}</td>  
+
+              <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">submit</a>
+
+        </table>
+        <h3 class="Total-Price">Total: ${{totalcost}}</h3>
