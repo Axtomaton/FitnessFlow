@@ -49,6 +49,10 @@ export class UserService {
   returnTotal():number{
     return this.total;
   }
+  clearCart():void{
+    this.cart=[]
+    this.total=0;
+  }
 
 }
 

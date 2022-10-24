@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-order-confirmation-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderConfirmationPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userservice:UserService) { }
 
   ngOnInit(): void {
+    this.userservice.clearCart()
   }
 
 }
