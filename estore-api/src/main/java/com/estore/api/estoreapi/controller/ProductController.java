@@ -88,8 +88,8 @@ public class ProductController {
      * ResponseEntity with HTTP status of NOT_FOUND if not found<br>
      * ResponseEntity with HTTP status of INTERNAL_SERVER_ERROR otherwise
      */
-    @PutMapping("")
-    public ResponseEntity<Product> updateProduct(@PathVariable Product newP){
+    @PutMapping("product")
+    public ResponseEntity<Product> updateProduct(@RequestBody Product newP){
         LOG.info("PUT   /pruduct "+ newP);
         int id = newP.getID();
         try{
