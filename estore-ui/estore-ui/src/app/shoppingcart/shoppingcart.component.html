@@ -13,7 +13,7 @@
       <h1 class="order-summary">Order Summary</h1>
 
 
-
+<div class="products-in-cart">
       <div class="products-in-cart">
         <table>
           <tr>
@@ -21,5 +21,8 @@
           </tr>
             <tr class="items" *ngFor="let item of shoppingcart">
               <td>{{item}}</td>  
+
+              <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">submit</a>
+
         </table>
         <h3 class="Total-Price">Total: ${{totalcost}}</h3>

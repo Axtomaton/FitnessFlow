@@ -1,11 +1,4 @@
-body .top-navbar{
-  text-align: center;
-  background: #CCCCFF;
-  height: 80px;
-  width: 100%;
-  margin: 0px;
-  background: #CCCCFF;
-}
+
 body .logo{
     color:#321cc5;
     text-align: left;
@@ -13,7 +6,6 @@ body .logo{
 }
 .top-navbar{
     position:fixed;
-    text-align: c;
     top: 0;
     background: #CCCCFF;
     height: 80px;

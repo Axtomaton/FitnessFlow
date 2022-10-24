@@ -1,7 +1,28 @@
-.confirmation-email{
+
+.heading{
+    position: relative;
     text-align: center;
+    margin: auto;
+    top: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(51, 109, 197);
 
 }
-.heading{
-    text-align: left;
+
+body h4{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 110px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.products-in-cart{
+    margin: 0;
+    height: 600px;
+    width: 50%;
+    position: relative; top: 100px;
+    background-color: grey;
+    padding: 0;
+    margin: auto;
+  }
