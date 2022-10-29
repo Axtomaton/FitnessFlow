@@ -24,7 +24,7 @@ cart and checkout said items utilizing our UI to navigate throughout the website
 The webiste we are creating should allow a user to sign up to a new account or log into an existing account to add a product our company is offering in their shopping cart and then proceed to purchase said product if they wish at checkout.
 
 ### Purpose
-Rochester Parkour is family run gym and fitness center situated in downtown Rochester. Our goal is to encourage individuals to partake in physical activties to better themselves physically, and mentally. We have been serving our community since 1980's.
+Rochester Parkour is family run gym and fitness center situated in downtown Rochester. Our goal is to encourage individuals to partake in physical activties to better themselves physically, and mentally. We have been serving our community since 1980's. The target audience for this business is anyone who wants to work on themselves.
 This document describes the features and functionality of our newly developed Web application. 
 
 ### Glossary and Acronyms
@@ -33,22 +33,18 @@ This document describes the features and functionality of our newly developed We
 
 ## Requirements
 
-This section describes the features of the application.
+## Definition of MVP
+*The admin should be able to Add/Remove/Modify the products offered at the Estore
+*Visitors can sign up and login as users of the website
+*Users can add or remove products from their shopping cart.
+*Users can checkout their shopping carts.
 
-> _In this section you do not need to be exhaustive and list every
-> story.  Focus on top-level features from the Vision document and
-> maybe Epics and critical Stories._
+<!-- ### MVP Features -->
 
-### Definition of MVP
-> _Provide a simple description of the Minimum Viable Product._
-
-
-### MVP Features
-> _Provide a list of top-level Epics and/or Stories of the MVP._
 
 ### Roadmap of Enhancements
-> _Provide a list of top-level features in the order you plan to consider them._
-
+*User Rating: The user should be able to add ratings for the products and leave a review for the products if the user wants
+*View Typed Password: Visitor should be able to view the typed password when signing.
 
 ## Application Domain
 
@@ -56,10 +52,8 @@ This section describes the application domain.
 
 ![Domain Model](Domain.png)
 
-> _Provide a high-level overview of the domain for this application. You
-> can discuss the more important domain entities and their relationship
-> to each other._
 
+The Admin/Parkour gym maintains the Products that the store seliing. Admin/Parkour gym also validate visitors when they try to login or sign up. If the validation is successful they are either logged in as an existing user or a brand new user. The user has the ability search and add/remove products to/from their personal shoppping cart. Users can then checkout their shopping cart.
 
 ## Architecture and Design
 
