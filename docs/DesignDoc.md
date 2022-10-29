@@ -9,27 +9,26 @@ geometry: margin=1in
 > and appear in the generated PDF in italics._
 
 ## Team Information
-* Team name: TEAMNAME
+* Team name: awesome blasters
 * Team members
-  * MEMBER1
-  * MEMBER2
-  * MEMBER3
-  * MEMBER4
+  * Thomas Garcia
+  * Aagman Relan
+  * Ivan Lin
+  * JianZhuang Jiang
 
 ## Executive Summary
 
-This is a summary of the project.
+Our website must allow signed in users to add products to their shopping
+cart and checkout said items utilizing our UI to navigate throughout the website.
+
+The webiste we are creating should allow a user to sign up to a new account or log into an existing account to add a product our company is offering in their shopping cart and then proceed to purchase said product if they wish at checkout.
 
 ### Purpose
-> _Provide a very brief statement about the project and the most
-> important user group and user goals._
+Rochester Parkour is family run gym and fitness center situated in downtown Rochester. Our goal is to encourage individuals to partake in physical activties to better themselves physically, and mentally. We have been serving our community since 1980's.
+This document describes the features and functionality of our newly developed Web application. 
 
 ### Glossary and Acronyms
 > _Provide a table of terms and acronyms._
-
-| Term | Definition |
-|------|------------|
-| SPA | Single Page |
 
 
 ## Requirements
@@ -43,6 +42,7 @@ This section describes the features of the application.
 ### Definition of MVP
 > _Provide a simple description of the Minimum Viable Product._
 
+
 ### MVP Features
 > _Provide a list of top-level Epics and/or Stories of the MVP._
 
@@ -54,7 +54,7 @@ This section describes the features of the application.
 
 This section describes the application domain.
 
-![Domain Model](domain-model-placeholder.png)
+![Domain Model](Domain.png)
 
 > _Provide a high-level overview of the domain for this application. You
 > can discuss the more important domain entities and their relationship
