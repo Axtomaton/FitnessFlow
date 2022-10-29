@@ -23,12 +23,12 @@ Rochester Parkour is family run gym and fitness center situated in downtown Roch
 This document describes the features and functionality of our newly developed Web application. 
 
 ### Glossary and Acronyms
-> _Provide a table of terms and acronyms._
-| **Term** | **Definition**                                           |   |   |   |
-|----------|----------------------------------------------------------|---|---|---|
-| Visitor  | A Person on the website who is not logged in             |   |   |   |
-| User     | A person on the website who is logged in                 |   |   |   |
-| Admin    | This person can manage products and users of the website |   |   |   |
+
+| **Term** | **Definition**                                           |
+|----------|----------------------------------------------------------|
+| Visitor  | A Person on the website who is not logged in             |
+| User     | A person on the website who is logged in                 | 
+| Admin    | This person can manage products and users of the website |
 
 ## Requirements
 
