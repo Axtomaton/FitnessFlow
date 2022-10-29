@@ -3,11 +3,6 @@ geometry: margin=1in
 ---
 # PROJECT Design Documentation
 
-> _The following template provides the headings for your Design
-> Documentation.  As you edit each section make sure you remove these
-> commentary 'blockquotes'; the lines that start with a > character
-> and appear in the generated PDF in italics._
-
 ## Team Information
 * Team name: awesome blasters
 * Team members
@@ -29,7 +24,11 @@ This document describes the features and functionality of our newly developed We
 
 ### Glossary and Acronyms
 > _Provide a table of terms and acronyms._
-
+| **Term** | **Definition**                                           |   |   |   |
+|----------|----------------------------------------------------------|---|---|---|
+| Visitor  | A Person on the website who is not logged in             |   |   |   |
+| User     | A person on the website who is logged in                 |   |   |   |
+| Admin    | This person can manage products and users of the website |   |   |   |
 
 ## Requirements
 
@@ -48,7 +47,6 @@ This document describes the features and functionality of our newly developed We
 
 ## Application Domain
 
-This section describes the application domain.
 
 ![Domain Model](Domain.png)
 
