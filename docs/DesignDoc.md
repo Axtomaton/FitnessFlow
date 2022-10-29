@@ -34,17 +34,17 @@ This document describes the features and functionality of our newly developed We
 ## Requirements
 
 ## Definition of MVP
-*The admin should be able to Add/Remove/Modify the products offered at the Estore
-*Visitors can sign up and login as users of the website
-*Users can add or remove products from their shopping cart.
-*Users can checkout their shopping carts.
+* The admin should be able to Add/Remove/Modify the products offered at the Estore
+* Visitors can sign up and login as users of the website
+* Users can add or remove products from their shopping cart.
+* Users can checkout their shopping carts.
 
 <!-- ### MVP Features -->
 
 
 ### Roadmap of Enhancements
-*User Rating: The user should be able to add ratings for the products and leave a review for the products if the user wants
-*View Typed Password: Visitor should be able to view the typed password when signing.
+* User Rating: The user should be able to add ratings for the products and leave a review for the products if the user wants
+* View Typed Password: Visitor should be able to view the typed password when signing.
 
 ## Application Domain
 
