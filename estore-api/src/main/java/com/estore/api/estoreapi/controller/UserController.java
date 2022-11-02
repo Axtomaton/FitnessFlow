@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.estore.api.estoreapi.Model.User;
 import com.estore.api.estoreapi.Model.UserLogin;
 import com.estore.api.estoreapi.persistence.UserDAO;
-import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,7 +62,8 @@ public class UserController {
                     return new ResponseEntity<>(existinguser,HttpStatus.OK);
                 }
                 else if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber()== givenPhoneNumber){
-                        User updateduser= userDAO.updateUser(new User(givenusername,givenpassword,existinguser.getFirstName(),existinguser.getLastName(),givenPhoneNumber));
+                        User updateduser= userDAO.updateUser(new User(givenusername,givenpassword,existinguser.getFirstName(),existinguser.getLastName(),givenPhoneNumber,
+                        existinguser.getCart()));
                         return new ResponseEntity<>(updateduser,HttpStatus.OK);
                 }
             }
@@ -75,5 +75,7 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+
 
 }

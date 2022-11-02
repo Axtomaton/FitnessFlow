@@ -55,7 +55,7 @@ public class UserFileDAO  implements UserDAO{
 
     @Override
     public User signup(User user) throws IOException {
-            User newProduct = new User(user.getUsername(),user.getPassword(),user.getFirstName(),user.getLastName(),user.getPhoneNumber());
+            User newProduct = new User(user.getUsername(),user.getPassword(),user.getFirstName(),user.getLastName(),user.getPhoneNumber(),user.getCart());
             Users.put(newProduct.getUsername(),newProduct);
             save();
             return newProduct;
