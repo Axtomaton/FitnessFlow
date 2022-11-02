@@ -1,9 +1,11 @@
 package com.estore.api.estoreapi.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +13,7 @@ import com.estore.api.estoreapi.Model.User;
 import com.estore.api.estoreapi.Model.UserLogin;
 import com.estore.api.estoreapi.persistence.UserDAO;
 
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -77,5 +80,18 @@ public class UserController {
     }
     
 
+    @GetMapping("/addToCart")
+    @ResponseBody
+    public void addToCart(@RequestParam("Username") String username, @RequestParam("ProductID") int ProductID) throws IOException{
+        User[] users= userDAO.getUsers();
+        for(User tmp: users){
+            if(tmp.getUsername().equals(username)){
+                tmp.getCart().add(ProductID);
+                userDAO.updateUser(tmp);
+            }
+        
+        }
+
+    }
 
 }

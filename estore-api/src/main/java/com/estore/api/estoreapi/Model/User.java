@@ -14,7 +14,7 @@ public class User {
     private ArrayList<Integer> Cart;
 
     public User(@JsonProperty("Username") String username, @JsonProperty("Password") String password, @JsonProperty("firstName") String FirstName, @JsonProperty("lastName") String LastName,
-    @JsonProperty("phoneNumber")long PhoneNumber, @JsonProperty("Cart")ArrayList<Integer>Cart){
+    @JsonProperty("phoneNumber")long PhoneNumber, @JsonProperty("cart")ArrayList<Integer>Cart){
         this.FirstName=FirstName;
         this.LastName=LastName;
         this.PhoneNumber=PhoneNumber;
