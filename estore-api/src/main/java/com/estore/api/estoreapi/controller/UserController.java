@@ -14,6 +14,7 @@ import com.estore.api.estoreapi.Model.UserLogin;
 import com.estore.api.estoreapi.persistence.UserDAO;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -89,9 +90,20 @@ public class UserController {
                 tmp.getCart().add(ProductID);
                 userDAO.updateUser(tmp);
             }
-        
         }
 
     }
 
+    @GetMapping("/removeFromCart")
+    @ResponseBody
+    public void removeFromCart(@RequestParam("Username") String username, @RequestParam("ProductID") int ProductID) throws IOException {
+        User [] users=userDAO.getUsers();
+        for(User tmp: users){
+            if(tmp.getUsername().equals(username)){
+                tmp.getCart().remove(Integer.valueOf(ProductID));
+                userDAO.updateUser(tmp);
+            }
+        }
+
+    }
 }
