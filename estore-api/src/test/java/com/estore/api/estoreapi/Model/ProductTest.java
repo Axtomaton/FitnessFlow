@@ -99,7 +99,7 @@ public class ProductTest{
     @Test
     public void testtoString(){
         // Setup
-        String producString="Product(ID:99, Name:Generic Test Product, Type:Generic Test Type, Instructor:Generic Test Instructor, Room:Generic Test Room, Available:false)";
+        String producString="Product(ID:99, Name:Generic Test Product, Type:Generic Test Type, Instructor:Generic Test Instructor, Room:Generic Test Room, Available:false, Price:123.56)";
 
         // Analyze
         assertEquals(producString, this.product.toString());

@@ -1,6 +1,7 @@
 package com.estore.api.estoreapi.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -10,8 +11,10 @@ import java.io.IOException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.matchers.Null;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.estore.api.estoreapi.Model.Product;
 import com.estore.api.estoreapi.persistence.ProductDAO;
@@ -55,11 +58,28 @@ public class ProductControllerTest {
         when(mockproductDAO.getProduct(product.getID())).thenReturn(product);
 
         // Invoke
-        ResponseEntity<Product> response = productController.GetSingleProduct(product.getID());
+        ResponseEntity<Product> response = productController.GetSingleProduct(99);
 
         // Analyze
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(product, response.getBody());
+
+        // Invoke
+        ResponseEntity<Product> response2 = productController.GetSingleProduct(895);
+
+        // Analyze
+        assertEquals(HttpStatus.NOT_FOUND, response2.getStatusCode());
+        //assertEquals("",response2.getBody());
+
+
+        // when deleteProduct is called return false, simulating failed deletion
+        doThrow(new IOException()).when(mockproductDAO).getProduct(0);
+
+        // Invoke
+        ResponseEntity<Product> response3 = productController.GetSingleProduct(0);
+
+        // Analyze
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response3.getStatusCode());
     }
     /**
      * @author Ivan Lin
@@ -87,6 +107,15 @@ public class ProductControllerTest {
         // Analyze
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(products.length, response.getBody().length);
+
+
+        doThrow(new IOException()).when(mockproductDAO).findProduct(name);
+
+        // Invoke
+        ResponseEntity<Product[]> response2 = productController.searchProduct(name);
+
+        // Analyze
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response2.getStatusCode());        
     }
     /**
      * @author JianZhuang Jiang
@@ -107,23 +136,22 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("The requested product was successfully Deleted", response.getBody());
 
-    }
-    /**
-     * @author Thomas Garcia
-     * @throws IOException
-     */
-    @Test
-    public void testDeleteProductError() throws IOException{ // deleteProduct may throw IOException
+        ResponseEntity<String>  response2= productController.deleteProduct(9999);
+
+        // Analyze
+        assertEquals(HttpStatus.NOT_FOUND, response2.getStatusCode());
+        assertEquals("The Requested Product was not Found", response2.getBody());
 
         // when deleteProduct is called return false, simulating failed deletion
         doThrow(new IOException()).when(mockproductDAO).getProduct(0);
 
         // Invoke
-        ResponseEntity<String> response = productController.deleteProduct(0);
+        ResponseEntity<String> response3 = productController.deleteProduct(0);
 
         // Analyze
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
-    }
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response3.getStatusCode());
+}
+
     /**
      * @author Aagman Relan
      * @throws IOException
@@ -146,6 +174,13 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(products, response.getBody());
         
+        doThrow(new IOException()).when(mockproductDAO).getProducts();
+
+        // Invoke
+        ResponseEntity<Product[]> response2 = productController.getallInventory();
+
+        // Analyze
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response2.getStatusCode());
     }
     /**
      * @author Ivan Lin
@@ -155,6 +190,8 @@ public class ProductControllerTest {
     public void testUpdate() throws IOException{ // updateProduct may throw IOException
         // Setup
         Product product = new Product(99, "Generic", "Generic", "Generic", "Generic", false,123.76);
+
+        Product product2 = new Product(99999, "Generic", "Generic", "Generic", "Generic", false,123.76);
 
         // when updateProduct is called, return true simulating successful
         // update and save
@@ -166,6 +203,21 @@ public class ProductControllerTest {
 
         // Analyze
         assertEquals(HttpStatus.OK,response.getStatusCode());
+//-------------------
+        ResponseEntity<Product>  response2= productController.updateProduct(product2);
+
+        // Analyze
+        assertEquals(HttpStatus.NOT_FOUND, response2.getStatusCode());
+       // assertEquals("The Requested Product was not Found", response2.getBody());
+
+        // when deleteProduct is called return false, simulating failed deletion
+        doThrow(new IOException()).when(mockproductDAO).getProduct(99999);
+
+        // Invoke
+        ResponseEntity<Product> response3 = productController.updateProduct(product2);
+
+        // Analyze
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response3.getStatusCode());
     
     }
     /**
@@ -176,7 +228,11 @@ public class ProductControllerTest {
     public void testCreateProduct() throws IOException {    // createHero may throw IOException
         // Setup
         Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false,123.76);
-        Product[] arr = new Product[0];
+        Product product2 = new Product(99, "Generic 11", "Generic 112", "Generic 13", "Generic 4", false,123.76);
+
+        Product[] arr = new Product[1];
+        arr[0]=product2;
+
 
         // when createHero is called, return true simulating successful
         // creation and save
@@ -189,6 +245,24 @@ public class ProductControllerTest {
         // Analyze
         assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals(product, response.getBody());
+
+        arr[0]=product;
+        // Invoke
+        ResponseEntity<Product> response2 = productController.CreateProduct(product);
+
+        // Analyze
+        assertEquals(HttpStatus.CONFLICT, response2.getStatusCode());
+        assertEquals(product, response2.getBody());
+//-----
+        arr[0]=null;
+        doThrow(new IOException()).when(mockproductDAO).createProduct(product);
+
+        // Invoke
+        ResponseEntity<Product> response3 = productController.CreateProduct(product);
+
+        // Analyze
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response3.getStatusCode());
+    
     }
 
 
