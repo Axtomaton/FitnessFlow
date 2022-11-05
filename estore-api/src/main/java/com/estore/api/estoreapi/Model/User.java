@@ -8,13 +8,13 @@ public class User {
 
     private String FirstName;
     private String LastName;
-    private long PhoneNumber;
+    private String PhoneNumber;
     private String username;
     private String password;
     private ArrayList<Integer> Cart;
 
     public User(@JsonProperty("Username") String username, @JsonProperty("Password") String password, @JsonProperty("firstName") String FirstName, @JsonProperty("lastName") String LastName,
-    @JsonProperty("phoneNumber")long PhoneNumber, @JsonProperty("cart")ArrayList<Integer>Cart){
+    @JsonProperty("phoneNumber")String PhoneNumber, @JsonProperty("cart")ArrayList<Integer>Cart){
         this.FirstName=FirstName;
         this.LastName=LastName;
         this.PhoneNumber=PhoneNumber;
@@ -35,7 +35,7 @@ public class User {
     public String getLastName(){
         return this.LastName;
     }
-    public long getPhoneNumber(){
+    public String getPhoneNumber(){
         return this.PhoneNumber;
     }
     public ArrayList<Integer> getCart(){

@@ -58,14 +58,18 @@ public class UserController {
             
             String givenusername=response.getUsername();
             String givenpassword = response.getPassword();
-            long givenPhoneNumber = response.getPhoneNumber();
-
+            String givenPhoneNumber = response.getPhoneNumber();
+            
+            System.out.println(givenusername);
+            System.out.println(givenPhoneNumber);
+            System.out.println(givenpassword);
 
             for(User existinguser: existingUsers){
-                if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber()== givenPhoneNumber && existinguser.getPassword().equals(givenpassword)){
+                if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber().equals(givenPhoneNumber) && existinguser.getPassword().equals(givenpassword)){
+                    System.out.println("Returning actual user");
                     return new ResponseEntity<>(existinguser,HttpStatus.OK);
                 }
-                else if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber()== givenPhoneNumber){
+                else if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber().equals(givenPhoneNumber)){
                         User updateduser= userDAO.updateUser(new User(givenusername,givenpassword,existinguser.getFirstName(),existinguser.getLastName(),givenPhoneNumber,
                         existinguser.getCart()));
                         return new ResponseEntity<>(updateduser,HttpStatus.OK);

@@ -26,14 +26,13 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required #pass>
 
-      <!--type="submit" 
-        <label> <input type="checkbox" checked="checked" name="remember"> Remember me </label>
-        <span class="psw">Forgot <a href="#">password?</a></span>
-      -->
+      <label for="phone"><b>Phone Number</b></label>
+      <input type="text" placeholder="Enter 10 Digit Phone Number" name="phone" required #phone>
+
     </div>
   
     <div class="container" style="background-color:#f1f1f1">
-      <button type ="button" class="loginbtn" style="float: right;" (click)=" doLogin(user.value,pass.value);user.value='';pass.value=''; ">Login</button> 
+      <button type ="button" class="loginbtn" style="float: right;" (click)=" doLogin(user.value,pass.value,phone.value);user.value='';pass.value=''; ">Login</button> 
       <button type="button" class="cancelbtn" (click)="user.value='';pass.value=''"> Cancel</button>
       
     </div>

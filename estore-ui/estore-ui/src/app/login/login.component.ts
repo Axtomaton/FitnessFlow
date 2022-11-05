@@ -12,12 +12,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  doLogin(user:String,pass:String):void{
+  doLogin(user:string,pass:string,phone:string):void{
     if(user=="" || pass==""){
-
+      return
     }
     else{
-      this.userservice.userLogin(user,pass)
+      this.userservice.userLogin(user,pass,phone)
     }
     
   }

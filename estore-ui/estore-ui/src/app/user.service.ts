@@ -18,20 +18,16 @@ export class UserService {
 
   private cart:Array<Number>=[];
   private total:number=0;
-  userLogin(user:String,pass:String):void{
-      
+  userLogin(user:string,pass:string,phone:string):void{
     const  body:userInformation={
         Username: user,
         Password: pass,
+        Phone: phone
       }
-      console.log(this.http.post(this.baseUrl,body,this.httpOptions).subscribe(isAdmin=>{
-        if(isAdmin){
-          this.router.navigate(['/adminView'])
-        }
-        else{
-          this.router.navigate(['/customerView'])
-        }
-      }));
+      console.log(phone)
+      this.http.post<User>(this.baseUrl+"login",body,this.httpOptions).subscribe(user=>{
+        console.log(user.FirstName)
+      });
   }
 
   userSignup():void{
@@ -57,6 +53,16 @@ export class UserService {
 }
 
 interface userInformation{
-  Username:String,
-  Password:String,
+  Username:string,
+  Password:string,
+  Phone:string
+}
+
+interface User{
+     FirstName:string;
+     LastName:string;
+     PhoneNumber:string;
+     username:string;
+     password:string;
+     Cart:Array<Number>;
 }

@@ -76,10 +76,10 @@ public class UserFileDAO  implements UserDAO{
     }
 
     @Override
-    public User loginUser(String username,long PhoneNumber, String Password) throws IOException {
+    public User loginUser(String username,String PhoneNumber, String Password) throws IOException {
         if(Users.containsKey(username)){
             User actual = Users.get(username);
-            if(actual.getPassword()==Password && actual.getPhoneNumber()==PhoneNumber){
+            if(actual.getPassword()==Password && actual.getPhoneNumber().equals(PhoneNumber)){
                 return actual;
             }
             return null;
