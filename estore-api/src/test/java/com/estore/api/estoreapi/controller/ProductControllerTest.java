@@ -7,7 +7,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import org.assertj.core.internal.bytebuddy.implementation.bytecode.collection.ArrayLength;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -17,6 +19,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.estore.api.estoreapi.Model.Product;
+import com.estore.api.estoreapi.Model.ProductRating;
+import com.estore.api.estoreapi.Model.Rating;
 import com.estore.api.estoreapi.persistence.ProductDAO;
 
 
@@ -29,8 +33,8 @@ import com.estore.api.estoreapi.persistence.ProductDAO;
 @Tag("Controller-tier")
 public class ProductControllerTest {
     private ProductController productController;
-
     private ProductDAO mockproductDAO;
+    
 
     /**
      * Before each test, create a new ProductController object and inject
@@ -52,7 +56,7 @@ public class ProductControllerTest {
 
         // setup
         Product product = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-        false,123.65);
+        false,123.65, null);
 
         // When the same id is passed in, our mock Product DAO will return the Product object
         when(mockproductDAO.getProduct(product.getID())).thenReturn(product);
@@ -92,9 +96,9 @@ public class ProductControllerTest {
         // Setup
         Product[] products = new Product[2];
         products[0] = new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
-        "Generic Test Room", false,234.56);
+        "Generic Test Room", false,234.56, null);
         products[1] = new Product(998, "Test Product", " est Type", "Generic Test Instructor", 
-        "Generic Test Room", true,546.78);
+        "Generic Test Room", true,546.78, null);
         String name="odu";
 
         // When findProduct is called with the search string, return the two
@@ -126,7 +130,7 @@ public class ProductControllerTest {
 
         // when deleteProduct is called return true, simulating successful deletion
         when(mockproductDAO.getProduct(0)).thenReturn(new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", 
-                   "Generic Test Room", false,123.45));
+                   "Generic Test Room", false,123.45, null));
         when(mockproductDAO.deleteProduct(0)).thenReturn(true);
 
         // Invoke
@@ -161,7 +165,7 @@ public class ProductControllerTest {
         // Setup
         Product[] products = new Product[5];
         for(int i=0;i<5;i++){
-            products[i] = new Product(i, "Generic", "Generic", "Generic", "Generic", false,43.67);
+            products[i] = new Product(i, "Generic", "Generic", "Generic", "Generic", false,43.67, null);
         }
 
         // When getInventory is called return the products created above
@@ -189,9 +193,9 @@ public class ProductControllerTest {
     @Test
     public void testUpdate() throws IOException{ // updateProduct may throw IOException
         // Setup
-        Product product = new Product(99, "Generic", "Generic", "Generic", "Generic", false,123.76);
+        Product product = new Product(99, "Generic", "Generic", "Generic", "Generic", false,123.76, null);
 
-        Product product2 = new Product(99999, "Generic", "Generic", "Generic", "Generic", false,123.76);
+        Product product2 = new Product(99999, "Generic", "Generic", "Generic", "Generic", false,123.76, null);
 
         // when updateProduct is called, return true simulating successful
         // update and save
@@ -227,8 +231,8 @@ public class ProductControllerTest {
     @Test
     public void testCreateProduct() throws IOException {    // createHero may throw IOException
         // Setup
-        Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false,123.76);
-        Product product2 = new Product(99, "Generic 11", "Generic 112", "Generic 13", "Generic 4", false,123.76);
+        Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false,123.76, null);
+        Product product2 = new Product(99, "Generic 11", "Generic 112", "Generic 13", "Generic 4", false,123.76, null);
 
         Product[] arr = new Product[1];
         arr[0]=product2;
@@ -264,6 +268,35 @@ public class ProductControllerTest {
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response3.getStatusCode());
     
     }
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
+    @Test
+    public void testReview() throws IOException{
+        ArrayList<Rating> ratingArr = new ArrayList<>();
+        Rating mockreview = new Rating(8, "this shit sucks", "me");
+        ratingArr.add(mockreview);
+        Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false,123.76, ratingArr );
+        ProductRating productRating= new ProductRating(product, mockreview);
+        //when(mockproductDAO.getProducts()).thenReturn(arr);
 
+        when(mockproductDAO.addRating(mockreview, product)).thenReturn(product);
 
+        ResponseEntity<Product> response = productController.addRatingtoTheProduct(productRating);
+
+        // Analyze
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(product, response.getBody());
+
+        doThrow(new IOException()).when(mockproductDAO).addRating(mockreview, product);
+
+        // Invoke
+        ResponseEntity<Product> response2 = productController.addRatingtoTheProduct(productRating);
+
+        // Analyze
+        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response2.getStatusCode());
+    
+
+    }
 }
