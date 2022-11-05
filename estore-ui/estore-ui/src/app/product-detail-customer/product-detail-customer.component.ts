@@ -36,7 +36,7 @@ export class ProductDetailCustomerComponent implements OnInit {
   }
 
   addToCart(id:number): void {
-    this.userservice.addToCart(id);
+    // this.userservice.addToCart(id);
     this.goBack();
   }
 }

@@ -11,7 +11,7 @@ export class OrderConfirmationPageComponent implements OnInit {
   constructor(private userservice:UserService) { }
 
   ngOnInit(): void {
-    this.userservice.clearCart()
+    // this.userservice.clearCart()
   }
 
 }

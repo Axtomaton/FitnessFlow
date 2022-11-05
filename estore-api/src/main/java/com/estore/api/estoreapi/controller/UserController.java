@@ -60,10 +60,6 @@ public class UserController {
             String givenpassword = response.getPassword();
             String givenPhoneNumber = response.getPhoneNumber();
             
-            System.out.println(givenusername);
-            System.out.println(givenPhoneNumber);
-            System.out.println(givenpassword);
-
             for(User existinguser: existingUsers){
                 if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber().equals(givenPhoneNumber) && existinguser.getPassword().equals(givenpassword)){
                     System.out.println("Returning actual user");

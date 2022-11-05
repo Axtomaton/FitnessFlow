@@ -10,10 +10,12 @@
 
     </ul>
   </nav>
-
+ 
 <div class="product-list">
     <h2>Listings</h2>
-    
+
+    <div *ngIf="loggedinUser!=null">Content to render when condition is true.</div>
+
     <ul >
         <li *ngFor="let product of products">
             <a routerLink="/customer/{{product.id}}">
