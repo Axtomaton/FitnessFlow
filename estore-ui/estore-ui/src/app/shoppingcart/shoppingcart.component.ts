@@ -15,22 +15,22 @@ export class ShoppingcartComponent implements OnInit {
   totalcost:number=0
  
   ngOnInit(): void {
-    this.getCart();
-    this.getTotal();
+    // this.getCart();
+    // this.getTotal();
   }
 
-  addToCart(id:number):void{
-    this.userservice.addToCart(id)
+  // addToCart(id:number):void{
+  //   this.userservice.addToCart(id)
 
-  }
+  // }
 
-  getCart():void{
-    this.shoppingcart=this.userservice.returnCart();
-  }
+  // getCart():void{
+  //   this.shoppingcart=this.userservice.returnCart();
+  // }
 
-  getTotal():void{
-    let c = parseFloat(this.userservice.returnTotal().toFixed(2));
-    this.totalcost = c;
-  }
+  // getTotal():void{
+  //   let c = parseFloat(this.userservice.returnTotal().toFixed(2));
+  //   this.totalcost = c;
+  // }
 
 }

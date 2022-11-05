@@ -17,9 +17,9 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  doSignUp(user:String,pass:String,repss:String):void{
+  doSignUp(first:string,last:string,phone:string,user:string,pass:string,repss:string):void{
     if(pass==repss){
-      this.userservice.userSignup()
+      this.userservice.userSignup(first,last,phone,user,pass)
     }
     else{
       this.router.navigateByUrl('');

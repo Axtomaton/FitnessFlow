@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductService } from './product.service';
+import { User } from 'User';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,47 +17,57 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  private cart:Array<Number>=[];
-  private total:number=0;
-  userLogin(user:String,pass:String):void{
-      
+  private loggedinuser:User | undefined 
+
+  userLogin(user:string,pass:string,phone:string):void{
     const  body:userInformation={
         Username: user,
         Password: pass,
+        phoneNumber: phone
       }
-      console.log(this.http.post(this.baseUrl,body,this.httpOptions).subscribe(isAdmin=>{
-        if(isAdmin){
-          this.router.navigate(['/adminView'])
-        }
-        else{
-          this.router.navigate(['/customerView'])
-        }
-      }));
+      this.http.post<User>(this.baseUrl+"login",body,this.httpOptions).subscribe(user=>{
+          if(user !=null){
+            this.loggedinuser=user
+            this.router.navigate(['/customerView']);
+          }
+      });
   }
 
-  userSignup():void{
-    this.router.navigate(['customerView'])
-  }
-  addToCart(id:number):void{
-    this.cart.push(id)
-    this.productservice.getProduct(id).subscribe((product)=>{
-      this.total+=product.Price;
-    });
-  }
-  returnCart():Array<Number>{
-    return this.cart;
-  }
-  returnTotal():number{
-    return this.total;
-  }
-  clearCart():void{
-    this.cart=[]
-    this.total=0;
+  userSignup(first:string,last:string,phone:string,username:string,password:string):void{
+    const body:User={
+    firstName:first,
+    lastName:last,
+    phoneNumber:phone,
+    Username:username,
+    Password:password,
+    cart:new Array<Number>
+    }
+    this.http.post<User>(this.baseUrl+"signup",body,this.httpOptions).subscribe(user=>{
+      if(user!=null){
+        this.loggedinuser=user
+        this.router.navigate(['/customerView']);
+      }
+    })
+    // this.router.navigate(['customerView'])
   }
 
+  getLoggedInUser():User | null{
+    if(this.loggedinuser !=null){
+      return this.loggedinuser
+    }
+    return null;
+  }
+
+  logout():void{
+    this.loggedinuser=undefined;
+    console.log(this.loggedinuser)
+  }
+  
 }
 
 interface userInformation{
-  Username:String,
-  Password:String,
+  Username:string,
+  Password:string,
+  phoneNumber:string
 }
+
