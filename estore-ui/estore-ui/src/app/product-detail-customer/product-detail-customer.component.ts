@@ -4,6 +4,7 @@ import { Product } from 'src/Product';
 import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
 import { UserService } from '../user.service';
+import { User } from 'User';
 
 @Component({
   selector: 'app-product-detail-customer',
@@ -21,9 +22,10 @@ export class ProductDetailCustomerComponent implements OnInit {
     private userservice:UserService
     ) { }
 
-
+    loggedinuser?: User | null
   ngOnInit(): void {
     this.getProduct();
+    this.loggedinuser=this.userservice.getLoggedInUser()
   }
 
   goBack():void{
@@ -36,7 +38,12 @@ export class ProductDetailCustomerComponent implements OnInit {
   }
 
   addToCart(id:number): void {
-    // this.userservice.addToCart(id);
+    if(this.loggedinuser!=null){
+      this.userservice.addtoCart(id,this.loggedinuser.username)
+    }
+    this.goBack();
+  }
+  goback():void{
     this.goBack();
   }
 }

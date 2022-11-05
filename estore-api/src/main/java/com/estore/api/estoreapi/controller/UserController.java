@@ -84,6 +84,7 @@ public class UserController {
     @GetMapping("/addToCart")
     @ResponseBody
     public void addToCart(@RequestParam("Username") String username, @RequestParam("ProductID") int ProductID) throws IOException{
+        LOG.info("POST /user/addToCart");
         User[] users= userDAO.getUsers();
         for(User tmp: users){
             if(tmp.getUsername().equals(username)){
