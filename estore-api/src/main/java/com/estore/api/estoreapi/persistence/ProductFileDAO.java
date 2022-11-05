@@ -9,9 +9,12 @@ import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.ldap.LdapProperties.Template;
 import org.springframework.stereotype.Component;
 
 import com.estore.api.estoreapi.Model.Product;
+import com.estore.api.estoreapi.Model.Rating;
+import com.estore.api.estoreapi.Model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -182,7 +185,7 @@ public class ProductFileDAO implements ProductDAO{
     @Override
     public Product createProduct(Product product) throws IOException {
         synchronized(Products){
-            Product newProduct = new Product(nextId(), product.getName(), product.getType(), product.getInstructor(), product.get_Room_Number(), product.IsAvailable(),product.getPrice());
+            Product newProduct = new Product(nextId(), product.getName(), product.getType(), product.getInstructor(), product.get_Room_Number(), product.IsAvailable(),product.getPrice(),product.getRatings());
             Products.put(newProduct.getID(),newProduct);
             save();
             return newProduct;
@@ -221,6 +224,21 @@ public class ProductFileDAO implements ProductDAO{
                 return save();
             }
 
+        }
+    }
+
+    @Override
+    public Product addRating(Rating rating, Product product) throws IOException {
+        synchronized(Products){
+            if(Products.containsKey(product.getID())==true){
+                Product tmp=Products.get(product.getID());
+                tmp.getRatings().add(rating);
+                Products.put(product.getID(),tmp);
+                save();
+                return tmp;
+            }else{
+                return null;
+            }
         }
     }
 }

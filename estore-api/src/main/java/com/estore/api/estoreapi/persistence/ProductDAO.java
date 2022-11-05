@@ -2,6 +2,8 @@ package com.estore.api.estoreapi.persistence;
 
 import java.io.IOException;
 import com.estore.api.estoreapi.Model.Product;
+import com.estore.api.estoreapi.Model.Rating;
+import com.estore.api.estoreapi.Model.User;
 /**
  * Defines the interface for Product object persistence
  * 
@@ -78,4 +80,8 @@ public interface ProductDAO {
      * @throws IOException if underlying storage cannot be accessed
      */
     boolean deleteProduct(int id) throws IOException;
+
+
+    Product addRating(Rating rating, Product product) throws IOException;
+
 }

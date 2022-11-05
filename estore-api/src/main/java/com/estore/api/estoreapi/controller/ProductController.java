@@ -1,14 +1,9 @@
 package com.estore.api.estoreapi.controller;
 
 import java.io.IOException;
-import java.net.http.HttpResponse;
-import java.security.PublicKey;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.apache.juli.logging.Log;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.parsing.PassThroughSourceExtractor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.estore.api.estoreapi.Model.Product;
+import com.estore.api.estoreapi.Model.ProductRating;
 import com.estore.api.estoreapi.persistence.ProductDAO;
-import com.fasterxml.jackson.annotation.JacksonInject;
 
 /**
  * Handles the REST API requests for the Product resource
@@ -207,6 +202,24 @@ public class ProductController {
             LOG.log(Level.SEVERE,e.getLocalizedMessage());
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @PostMapping("/addRating")
+    public ResponseEntity<Product> addRatingtoTheProduct(@RequestBody ProductRating productrating){
+        try{
+            if(productrating.getRating().getRatingInNumber()>10){
+                productrating.getRating().setRating(10);
+            }
+            else if(productrating.getRating().getRatingInNumber()<0){
+                productrating.getRating().setRating(0);
+            }
+            return new ResponseEntity<>(productDao.addRating(productrating.getRating(), productrating.getProduct()),HttpStatus.OK); 
+         }
+        catch(IOException e){
+            LOG.log(Level.SEVERE,e.getLocalizedMessage());
+                return new ResponseEntity<Product>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        
     }
 
 }

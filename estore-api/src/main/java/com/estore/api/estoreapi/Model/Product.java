@@ -1,5 +1,6 @@
 package com.estore.api.estoreapi.Model;
 
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,6 +25,7 @@ public class Product {
     private String Room_Number;
     private boolean Available;
     private double Price;
+    private ArrayList<Rating> Ratings;
 
     /**
      * {@inheritDoc}
@@ -45,7 +47,8 @@ public class Product {
      * value, i.e. 0 for int
      */
     public Product(@JsonProperty("id") int id, @JsonProperty("Name") String Name, @JsonProperty("Type") String Type, @JsonProperty("Instructor") String Instructor, 
-                        @JsonProperty("Room_Number") String Room_Number, @JsonProperty("Available") boolean Available,@JsonProperty("Price")double Price) {
+                        @JsonProperty("Room_Number") String Room_Number, @JsonProperty("Available") boolean Available,@JsonProperty("Price")double Price,
+                        @JsonProperty("Ratings") ArrayList<Rating>Ratings) {
         this.id = id;
         this.Name = Name;
         this.Type = Type;
@@ -53,6 +56,7 @@ public class Product {
         this.Room_Number= Room_Number;
         this.Available = Available;
         this.Price = Price;
+        this.Ratings=Ratings;
     }
 
     /**
@@ -117,6 +121,10 @@ public class Product {
             return Price;
         }
     
+    @JsonProperty("Ratings")
+        public ArrayList<Rating> getRatings(){
+            return Ratings;
+        }
 
     /**
      * Sets the name of the product - necessary for JSON object to Java object deserialization
@@ -163,5 +171,9 @@ public class Product {
      */
     public void setPrice(double Price){
         this.Price=Price;
+    }
+
+    public void setRatings(ArrayList<Rating> ratings){
+        this.Ratings=ratings;
     }
 }
