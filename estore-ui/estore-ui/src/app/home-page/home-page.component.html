@@ -12,9 +12,18 @@
               <i class="fas fa-bars"></i>
         </label>
         <ul>
-          <li><a routerLink="/about" routerLinkActive="active">about</a></li>
-          <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
-          <li><a routerLink="/login" routerLinkActive="active">login</a></li>
+
+          <div *ngIf="loggedinuser==null">
+            <li><a routerLink="/about" routerLinkActive="active">about</a></li>
+            <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
+            <li><a routerLink="/login" routerLinkActive="active">login</a></li>
+          </div>
+          <div *ngIf="loggedinuser!=null">
+            <li><button  (click)="logout()" routerLinkActive="active">Log Out</button></li>
+            <li><a routerLink="/customerView" routerLinkActive="active">Products</a></li>
+          </div>
+          
+          
         </ul>
       </nav>
 

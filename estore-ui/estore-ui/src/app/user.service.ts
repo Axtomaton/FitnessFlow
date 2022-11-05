@@ -33,13 +33,18 @@ export class UserService {
       });
   }
 
+  addtoCart(id:number,username:string):void{
+        console.log(this.baseUrl+"addToCart?Username="+username+"&ProductID="+id)
+        this.http.get(this.baseUrl+"addToCart?Username="+username+"&ProductID="+id).subscribe()
+  }
+
   userSignup(first:string,last:string,phone:string,username:string,password:string):void{
     const body:User={
     firstName:first,
     lastName:last,
     phoneNumber:phone,
-    Username:username,
-    Password:password,
+    username:username,
+    password:password,
     cart:new Array<Number>
     }
     this.http.post<User>(this.baseUrl+"signup",body,this.httpOptions).subscribe(user=>{
@@ -60,7 +65,8 @@ export class UserService {
 
   logout():void{
     this.loggedinuser=undefined;
-    console.log(this.loggedinuser)
+    this.router.navigate([""])
+
   }
   
 }
