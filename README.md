@@ -10,7 +10,7 @@ An online E-store system built in Java 8=>11
 - Ivan Lin
 - JianZhuang Jiang 
 - Aagman Relan
-- Omar Ramirez Chio 
+
 
 
 ## Prerequisites
