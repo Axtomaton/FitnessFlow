@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddProductPageComponent } from './add-product-page/add-product-page.component';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { ProductDetailCustomerComponent } from './product-detail-customer/product-detail-customer.component';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProductDetailCustomerComponent } from './product-detail-customer/produc
     ProductDetailComponent,
     AddProductPageComponent,
     CustomerViewComponent,
-    ProductDetailCustomerComponent
+    ProductDetailCustomerComponent,
+    NavigationBarComponent
     
   ],
   imports: [

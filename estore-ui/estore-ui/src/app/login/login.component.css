@@ -75,3 +75,11 @@ form {
       width: 100%;
     }
   }
+
+  .signup{
+    background-color: yellow;
+    color: black;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+  }

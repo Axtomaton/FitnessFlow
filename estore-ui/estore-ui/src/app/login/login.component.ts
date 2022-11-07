@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'User';
+import { Route, Router } from '@angular/router';
+import { User } from '../User';
 import { UserService } from '../user.service';
 @Component({
   selector: 'app-login',
@@ -8,7 +9,7 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userservice:UserService) { }
+  constructor(private userservice:UserService,private router:Router) { }
   loggedInUser?: User | null
 
   ngOnInit(): void {
@@ -22,6 +23,8 @@ export class LoginComponent implements OnInit {
     else{
       this.userservice.userLogin(user,pass,phone)
     }
-    
+  }
+  takemetologin():void{
+    this.router.navigate(['/signup'])
   }
 }

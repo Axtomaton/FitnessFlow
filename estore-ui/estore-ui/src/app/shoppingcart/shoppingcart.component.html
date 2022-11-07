@@ -1,18 +1,6 @@
 <body>
-    <nav class="top-navbar">
-        <label class="logo"><a routerLink="">Rochester Parkour</a></label>
-          <input type="checkbox" id="check">
-            <label for = "check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-          <li><a routerLink="/home" routerLinkActive="active">Log Out</a></li>
-        </ul>
-      </nav>
-
+<app-navigation-bar></app-navigation-bar>
       <h1 class="order-summary">Order Summary</h1>
-
-
 <div class="products-in-cart">
       <div class="products-in-cart">
         <table>
@@ -21,8 +9,12 @@
           </tr>
             <tr class="items" *ngFor="let item of shoppingcart">
               <td>{{item}}</td>  
-
-              <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">submit</a>
-
+              <button class="deleteproduct" (click)="removefromcart(item)"> Remove this item</button>
         </table>
+        </div>
+      </div>
+      <button routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">Check Out</button>
         <h3 class="Total-Price">Total: ${{totalcost}}</h3>
+
+
+  </body>

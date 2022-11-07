@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
 import { Product } from 'src/Product';
+import { Rating } from '../Rating';
 @Component({
   selector: 'app-add-product-page',
   templateUrl: './add-product-page.component.html',
@@ -30,6 +31,8 @@ export class AddProductPageComponent implements OnInit {
         Price:Number(price),
         id:1,
         Available:true,
+        Ratings:new Array<Rating>
+
       };
       this.productservice.addProduct(this.product).subscribe(()=>this.location.back())
 

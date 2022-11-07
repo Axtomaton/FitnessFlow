@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<head>
-
-    
-</head>
-
 <body>
-    <nav class="top-navbar">
-        <label class="logo"><a routerLink="">Rochester Parkour</a></label>
-          <input type="checkbox" id="check">
-            <label for = "check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-
-          <div *ngIf="loggedinuser==null">
-            <li><a routerLink="/about" routerLinkActive="active">about</a></li>
-            <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
-            <li><a routerLink="/login" routerLinkActive="active">login</a></li>
-          </div>
-          <div *ngIf="loggedinuser!=null">
-            <li><button  (click)="logout()" routerLinkActive="active">Log Out</button></li>
-            <li><a routerLink="/customerView" routerLinkActive="active">Products</a></li>
-          </div>
-          
-          
-        </ul>
-      </nav>
-
+    <app-navigation-bar></app-navigation-bar>
     <div class="gym-photos">
         <img src="https://i.ibb.co/rmQ8QrP/randompicture.jpg" class="gym-photo-1">
     </div>
-
-
-
 </body>

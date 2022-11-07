@@ -1,3 +1,5 @@
+import { Rating } from "./app/Rating";
+
 export interface Product{
     id: number;
     Name: string;
@@ -6,4 +8,5 @@ export interface Product{
     Room_Number: string;
     Available: boolean;
     Price: number;
+    Ratings:Array<Rating>;
 }

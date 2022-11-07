@@ -1,22 +1,6 @@
 
 <body>
-    <nav class="top-navbar">
-        <label class="logo"><a routerLink="">Rochester Parkour</a></label>
-          <input type="checkbox" id="check">
-            <label for = "check" class="checkbtn">
-              <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-          <li><a routerLink="/about" routerLinkActive="active">about</a></li>
-          <li><a routerLink="/shoppingcart" routerLinkActive="active">shopping cart</a></li>
-          <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
-          <li><a routerLink="/login" routerLinkActive="active">login</a></li>
-        </ul>
-      </nav>
-    <div>      
-  </div>
-</body>
-
+  <app-navigation-bar></app-navigation-bar>
 <form action="action_page.php" method="PUT">
     <div class="container">
       <label for="uname"><b>First Name</b></label>
@@ -35,8 +19,10 @@
 
     </div>
     <div class="container" style="background-color:#f1f1f1">
-        <button type ="button" class="loginbtn" style="float: right;" (click)="doSignUp(first.value,last.value,phone.value,user.value,pss.value,repss.value);user.value='';pss.value='';repss.value=''">Sign up</button> 
+      <button type ="button" class="loginbtn" style="float: right;" (click)="doSignUp(first.value,last.value,phone.value,user.value,pss.value,repss.value);user.value='';pss.value='';repss.value=''">Sign up</button> 
+      <button type="button" class="taketologin" (click)="taketologin()"> Take me to Login Instead </button>
       <button type="button" class="cancelbtn" (click)="user.value='';pss.value='';repss.value=''"> Cancel </button>
     </div>
 </form>
 
+</body>

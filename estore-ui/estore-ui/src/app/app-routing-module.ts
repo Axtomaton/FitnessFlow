@@ -23,11 +23,10 @@ export const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'about', component:AboutPageComponent},
   {path: 'signup',component:SignupComponent},
-
   {path: 'detail/:id',component:ProductDetailComponent},
   {path: 'newProduct',component:AddProductPageComponent},
   {path: 'customer/:id',component:ProductDetailCustomerComponent},
-  {path: 'home', component:HomePageComponent},
+  {path: '', component:HomePageComponent},
   {path: 'orderconfirmed', component:OrderConfirmationPageComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'detail/:id', component:ProductDetailComponent},

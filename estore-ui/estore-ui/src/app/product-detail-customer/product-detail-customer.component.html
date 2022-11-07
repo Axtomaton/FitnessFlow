@@ -1,3 +1,5 @@
+<body>
+  <app-navigation-bar></app-navigation-bar>
 <div *ngIf="product" class="product-details">
 
     <h2>{{product.Name }} Details</h2>
@@ -15,9 +17,19 @@
       <label for="product-aval">Availability:</label>
       {{product.Available}}      <br>
       <label for="product-price">Price:</label>
-      {{product.Price}}    </div>
-    
+      {{product.Price}} 
+      <br>
+      <label for="product-price">Ratings:</label>
+      <div *ngFor="let rating of product.Ratings">
+          {{rating.RatingInNumber}}  {{rating.Review}} . {{rating.Username}}
+
+      </div> 
+    </div>
 
     <button type="button" class="save" (click)="addToCart(product.id)">Add to cart</button>
-    <button type="button" class="goback" (click)="goBack()">Go Back</button>
+    <button type="button" class="go-back" (click)="goBack()">Go Back</button>
+
+
+
   </div>
+</body>

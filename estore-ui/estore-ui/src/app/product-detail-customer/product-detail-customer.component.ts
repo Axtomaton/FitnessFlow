@@ -4,8 +4,7 @@ import { Product } from 'src/Product';
 import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
 import { UserService } from '../user.service';
-import { User } from 'User';
-
+import { User } from '../User';
 @Component({
   selector: 'app-product-detail-customer',
   templateUrl: './product-detail-customer.component.html',
@@ -40,8 +39,12 @@ export class ProductDetailCustomerComponent implements OnInit {
   addToCart(id:number): void {
     if(this.loggedinuser!=null){
       this.userservice.addtoCart(id,this.loggedinuser.username)
+      this.goBack();
     }
-    this.goBack();
+    else{
+      this.userservice.taketosignuppage()
+    }
+
   }
   goback():void{
     this.goBack();

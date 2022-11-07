@@ -1,36 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Product } from 'src/Product';
 import { ProductService } from '../product.service';
 import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-shoppingcart',
   templateUrl: './shoppingcart.component.html',
-  styleUrls: ['./shoppingcart.component.css']
+  styleUrls: ['./shoppingcart.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class ShoppingcartComponent implements OnInit {
 
-  constructor(private userservice:UserService) { }
+  constructor(private userservice:UserService,private productservice:ProductService) { }
 
-  shoppingcart:Array<Number> = []
-  totalcost:number=0
- 
+  shoppingcart:Array<Number>|undefined = []
+  totalcost:Number=0
+  product:Product | undefined
   ngOnInit(): void {
-    // this.getCart();
-    // this.getTotal();
+    this.shoppingcart=this.userservice.returnCart()
+    this.totalcost=this.userservice.returntotal()
+    }
+
+    removefromcart(item:Number){
+      if(this.userservice.getLoggedInUser()!=null){
+        this.userservice.removefromcart(Number(item),this.userservice.returnusername())
+      }
+    }
   }
-
-  // addToCart(id:number):void{
-  //   this.userservice.addToCart(id)
-
-  // }
-
-  // getCart():void{
-  //   this.shoppingcart=this.userservice.returnCart();
-  // }
-
-  // getTotal():void{
-  //   let c = parseFloat(this.userservice.returnTotal().toFixed(2));
-  //   this.totalcost = c;
-  // }
-
-}

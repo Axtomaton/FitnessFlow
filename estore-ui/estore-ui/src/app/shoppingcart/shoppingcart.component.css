@@ -3,7 +3,7 @@ position: relative;
 top:760px;
 transform: translate(-50%, -50%);
 margin: auto;
-width: 70px;
+width: 150px;
 height: 30px;
 font-size: 20px;
 border-radius: 12px;
@@ -25,7 +25,7 @@ vertical-align: auto;
   height: 600px;
   width: 50%;
   position: relative; top: 150px;
-  background-color: grey;
+  /* background-color: rgb(255, 255, 255); */
   border: 3px;
   padding: 10px;
   margin: auto;
@@ -61,6 +61,9 @@ vertical-align: auto;
 
 }
 .items{
-  background-color: antiquewhite;
   text-align: center;
+}
+
+.deleteproduct{
+  margin-left: 50px;
 }

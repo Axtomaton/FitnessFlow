@@ -26,5 +26,8 @@ export class SignupComponent implements OnInit {
     }
       
   }
+  taketologin():void{
+    this.router.navigate(['/login'])
+  }
 
 }

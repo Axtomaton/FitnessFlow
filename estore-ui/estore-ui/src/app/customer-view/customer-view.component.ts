@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/Product';
 import { ProductService } from '../product.service';
-import { User } from 'User';
 import { UserService } from '../user.service';
+import { User } from '../User';
 @Component({
   selector: 'app-customer-view',
   templateUrl: './customer-view.component.html',
