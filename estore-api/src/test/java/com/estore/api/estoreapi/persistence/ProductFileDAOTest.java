@@ -13,13 +13,16 @@ import static org.mockito.Mockito.when;
 import java.io.File;
 import java.io.IOError;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Properties;
 
+import org.apache.logging.log4j.message.Message;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import com.estore.api.estoreapi.Model.Product;
+import com.estore.api.estoreapi.Model.Rating;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
@@ -46,12 +49,16 @@ public class ProductFileDAOTest {
         mockObjectMapper = mock(ObjectMapper.class);
         testProducts = new Product[3];
 
+        //Rating rating = new Rating(8, "thing", "thing");
+        ArrayList<Rating> arr = new ArrayList<>();
+        //arr.add(rating);
+
         testProducts[0]=new Product(99, "Generic Test Product", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-        false,34.76, null);
+        false,34.76, arr);
         testProducts[1]=new Product(998, "Generic Test Product 2", "Generic Test Type 2", "Generic Test Instructor 2", "Generic Test Room 2", 
-        true,23.45, null);
+        true,23.45, arr);
         testProducts[2]=new Product(997, "Generic Test Product 3", "Generic Test Type", "Generic Test Instructor", "Generic Test Room", 
-        false,98.09, null);
+        false,98.09, arr);
 
         // When the object mapper is supposed to read from the file
         // the mock object mapper will return the product array above
@@ -219,5 +226,28 @@ public class ProductFileDAOTest {
         // Invoke & Analyze
         assertThrows(IOException.class,
                         () -> new ProductFileDAO("doesnt_matter.txt",mockObjectMapper), "IOException not thrown");
+    }
+
+    /**
+     * @author JianZhuang Jiang
+     * @throws IOException
+     */
+    @Test
+    public void testaddRating() throws IOException {
+        Product product = new Product(99,"New Name","New Type","New Instructor","0000F",true,56.78, null);
+        Product product2 = new Product(8585,"New Name","New Type","New Instructor","0000F",true,56.78, null);
+
+        Rating rating = new Rating(8, "stuff", "things");
+        ArrayList<Rating> arr = new ArrayList<>();
+        arr.add(rating);
+        //productFileDAO.addRating(rating, product);
+        product.setRatings(arr);
+        Product result = productFileDAO.addRating(rating,product);
+        assertNotNull(result);
+        assertEquals(product.getRatings(), result.getRatings());
+
+        Product result2 = productFileDAO.addRating(rating,product2);
+
+        assertNull(result2);
     }
 }

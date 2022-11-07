@@ -2,6 +2,8 @@ package com.estore.api.estoreapi.Model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -104,5 +106,95 @@ public class ProductTest{
         // Analyze
         assertEquals(producString, this.product.toString());
     }
+    /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsetName(){
+        // Setup
+        String name="Generic Test Product";
+        product.setName(name);
+        // Analyze
+        assertEquals(name, this.product.getName());
+    }
 
+     /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsetinstructor(){
+        // Setup
+        String instructor ="Instructor A";
+        product.setInstructor(instructor);
+        // Analyze
+        assertEquals(instructor, this.product.getInstructor());
+    }
+
+     /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsetroom(){
+        
+        String room ="Room name number";
+        product.set_Room_Number(room);
+        
+        assertEquals(room, this.product.get_Room_Number());
+    }
+
+    /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsetavail(){
+        
+        boolean avail =false;
+        product.setAvailability(avail);
+        
+        assertEquals(avail, this.product.IsAvailable());
+
+    }
+
+    /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsetprice(){
+        
+        double price = 123.98;
+        product.setPrice(price);
+        
+        assertEquals(price, this.product.getPrice());
+
+    }
+
+    /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsettype(){
+        
+        String type = "typing";
+        product.setType(type);
+        
+        assertEquals(type, this.product.getType());
+
+    }
+
+    /**
+     * @author JianZhuang Jiang
+     */
+    @Test
+    public void testsetraiting(){
+        ArrayList<Rating> rating = new ArrayList<>();
+        Rating rate1 = new Rating(8,"review 1", "name1");
+        
+        rating.add(rate1);
+
+        product.setRatings(rating);
+
+        assertEquals(rating,this.product.getRatings());
+        
+        
+    }
 }
