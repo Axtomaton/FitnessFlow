@@ -51,14 +51,14 @@ public class UserController {
 
     @PostMapping(value="/login", consumes="application/json")
     @ResponseBody
-    public ResponseEntity<User>login(@RequestBody UserLogin response){
+    public ResponseEntity<User>login(@RequestBody User user){
         LOG.info("POST /user/login");
         try{
             User[] existingUsers = userDAO.getUsers();
             
-            String givenusername=response.getUsername();
-            String givenpassword = response.getPassword();
-            String givenPhoneNumber = response.getPhoneNumber();
+            String givenusername=user.getUsername();
+            String givenpassword = user.getPassword();
+            String givenPhoneNumber = user.getPhoneNumber();
             
             for(User existinguser: existingUsers){
                 if(existinguser.getUsername().equals(givenusername) && existinguser.getPhoneNumber().equals(givenPhoneNumber) && existinguser.getPassword().equals(givenpassword)){
