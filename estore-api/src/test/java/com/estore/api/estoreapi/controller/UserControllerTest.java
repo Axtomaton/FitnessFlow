@@ -77,12 +77,7 @@ public class UserControllerTest {
         ResponseEntity<User> response4 = uController.login(Null);
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response4.getStatusCode());
     }
-    
-    @Test
-    public void testaddtooCart(){
-        User[] ulist = new User[1];
-        ulist[0] = user;
-        when(mUserDAO.getUsers()).thenReturn(ulist);
 
-    }
+
+    
 }
