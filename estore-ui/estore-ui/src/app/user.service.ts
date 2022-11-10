@@ -31,6 +31,10 @@ export class UserService {
             this.loggedinuser=user
             this.router.navigate(['/customerView']);
           }
+          if(user.username == 'aagmanrelan'){
+            this.loggedinuser=user
+            this.router.navigate(['/adminView'])
+          }
       });
   }
 
