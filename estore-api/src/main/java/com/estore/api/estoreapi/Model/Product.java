@@ -48,7 +48,7 @@ public class Product {
      */
     public Product(@JsonProperty("id") int id, @JsonProperty("Name") String Name, @JsonProperty("Type") String Type, @JsonProperty("Instructor") String Instructor, 
                         @JsonProperty("Room_Number") String Room_Number, @JsonProperty("Available") boolean Available,@JsonProperty("Price")double Price,
-                        @JsonProperty("Ratings") ArrayList<Rating>Ratings) {
+                        @JsonProperty("Ratings Arraylist") ArrayList<Rating>Ratings) {
         this.id = id;
         this.Name = Name;
         this.Type = Type;

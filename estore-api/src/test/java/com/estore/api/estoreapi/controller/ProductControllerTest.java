@@ -276,7 +276,7 @@ public class ProductControllerTest {
     public void testReview() throws IOException{
         ArrayList<Rating> ratingArr = new ArrayList<>();
         Rating mockreview = new Rating(8, "this shit sucks", "me");
-        ratingArr.add(mockreview);
+        ratingArr.add(mockreview); 
         Product product = new Product(99, "Generic 1", "Generic 2", "Generic 3", "Generic 4", false,123.76, ratingArr );
         ProductRating productRating= new ProductRating(product, mockreview);
         //when(mockproductDAO.getProducts()).thenReturn(arr);

@@ -6,6 +6,9 @@
     </label>
     <ul>
 
+      <!-- <div *ngIf="loggedinuser?.username=='aagmanrelan'">
+        <li><a routerLink="/adminView" routerLinkActive="active">Inventory Management</a></li>
+       </div> -->
       <div *ngIf="loggedinuser==null">
         <li><a routerLink="/about" routerLinkActive="active">about</a></li>
         <li><a routerLink="/customerView" routerLinkActive="active">Products</a></li>
@@ -13,10 +16,12 @@
         <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
       </div>
       <div *ngIf="loggedinuser!=null">
+        <li><a *ngIf="loggedinuser?.username=='aagmanrelan'" routerLink="/adminView" routerLinkActive="active">Inventory</a></li>
         <li><a routerLink="/customerView" routerLinkActive="active">Products</a></li>
         <li><a routerLink="/shoppingcart" routerLinkActive="active">Shopping Cart</a></li>
         <li><button  (click)="logout()" >Log Out</button></li>
       </div>
+
 
 
       
