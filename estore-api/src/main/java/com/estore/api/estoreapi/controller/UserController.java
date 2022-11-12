@@ -51,7 +51,7 @@ public class UserController {
 
     @PostMapping(value="/login", consumes="application/json")
     @ResponseBody
-    public ResponseEntity<User>login(@RequestBody User user){
+    public ResponseEntity<User>login(@RequestBody UserLogin user){
         LOG.info("POST /user/login");
         try{
             User[] existingUsers = userDAO.getUsers();

@@ -1,5 +1,7 @@
 package com.estore.api.estoreapi;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.IOError;
 import java.io.IOException;
 
@@ -22,4 +24,11 @@ public class EstoreApiApplicationTests {
 	// 	EstoreApiApplication.main(new String[] {});
 	//  }
 
-}
+	@Test
+	public void testEstoreApiApplication(){
+		EstoreApiApplication.main(new String[] {});
+		assertTrue(true);
+	}
+ }
+
+

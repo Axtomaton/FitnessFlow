@@ -10,4 +10,5 @@ public class EstoreApiApplication {
 		SpringApplication.run(EstoreApiApplication.class, args);
 	}
 
+	
 }
