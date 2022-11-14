@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { UserService } from '../user.service';
 })
 export class OrderConfirmationPageComponent implements OnInit {
 
-  constructor(private userservice:UserService) { }
+  constructor(private userservice:UserService, private router:Router) { }
 
   ngOnInit(): void {
     // this.userservice.clearCart()
+    setTimeout(() => {
+      this.router.navigate(['']);
+  }, 4000);  //5s
   }
 
 }

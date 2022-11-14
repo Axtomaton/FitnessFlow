@@ -26,3 +26,11 @@ body h4{
     padding: 0;
     margin: auto;
   } */
+
+  body{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    top: 110px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }

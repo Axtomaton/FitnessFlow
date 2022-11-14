@@ -15,10 +15,9 @@ export class ShoppingcartComponent implements OnInit {
 
   shoppingcart:Array<Number>|undefined = []
   totalcost:Number=0
-  product:Product | undefined
   ngOnInit(): void {
     this.shoppingcart=this.userservice.returnCart()
-    this.totalcost=this.userservice.returntotal()
+    this.totalcost=this.userservice.returntotal()    
     }
     removefromcart(item:Number){
       if(this.userservice.getLoggedInUser()!=null){
