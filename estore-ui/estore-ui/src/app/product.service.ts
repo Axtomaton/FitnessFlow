@@ -3,6 +3,7 @@ import { Product } from 'src/Product';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { ProductRating } from './ProductRating';
 @Injectable({
   providedIn: 'root'
 })
@@ -66,5 +67,8 @@ export class ProductService {
       tap(_ => console.error(`deleted Product id=${id}`)),
       catchError(this.handleError<Product>('deletedProduct'))
     );
+  }
+  AddRating(body:ProductRating):void{
+     this.http.post<Product>(this.baseUrl+'/addRating',body,this.httpOptions).subscribe()
   }
 }

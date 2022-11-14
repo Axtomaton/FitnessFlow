@@ -15,6 +15,7 @@ import { ProductDetailCustomerComponent } from './product-detail-customer/produc
 import { CustomerViewComponent } from './customer-view/customer-view.component'
 
 import { ProductListsComponent } from './product-lists/product-lists.component';
+import { AddReviewPageComponent } from './add-review-page/add-review-page.component';
 
 
 
@@ -32,7 +33,8 @@ export const routes: Routes = [
   {path: 'detail/:id', component:ProductDetailComponent},
   {path: 'newProduct', component:AddProductPageComponent},
   {path: 'adminView', component:ProductListsComponent},
-  {path: 'customerView',component:CustomerViewComponent}
+  {path: 'customerView',component:CustomerViewComponent},
+  {path: 'addRating/:id',component:AddReviewPageComponent}
 
 ];
 

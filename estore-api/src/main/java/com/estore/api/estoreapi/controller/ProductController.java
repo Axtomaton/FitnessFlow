@@ -203,9 +203,9 @@ public class ProductController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
     @PostMapping("/addRating")
     public ResponseEntity<Product> addRatingtoTheProduct(@RequestBody ProductRating productrating){
+        LOG.info("POST /admin/addRating");
         try{
             if(productrating.getRating().getRatingInNumber()>10){
                 productrating.getRating().setRating(10);
@@ -219,7 +219,5 @@ public class ProductController {
             LOG.log(Level.SEVERE,e.getLocalizedMessage());
                 return new ResponseEntity<Product>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        
     }
-
 }

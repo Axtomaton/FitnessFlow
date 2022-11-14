@@ -20,7 +20,6 @@ export class ShoppingcartComponent implements OnInit {
     this.shoppingcart=this.userservice.returnCart()
     this.totalcost=this.userservice.returntotal()
     }
-
     removefromcart(item:Number){
       if(this.userservice.getLoggedInUser()!=null){
         this.userservice.removefromcart(Number(item),this.userservice.returnusername())

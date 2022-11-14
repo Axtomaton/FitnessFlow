@@ -19,15 +19,17 @@
       <label for="product-price">Price:</label>
       {{product.Price}} 
       <br>
-      <label for="product-price">Ratings:</label>
+      <label *ngIf="product.Ratings.length!=0" for="product-price">Ratings:</label>
       <div *ngFor="let rating of product.Ratings">
           {{rating.RatingInNumber}}  {{rating.Review}} . {{rating.Username}}
-
       </div> 
+
     </div>
 
     <button type="button" class="save" (click)="addToCart(product.id)">Add to cart</button>
     <button type="button" class="go-back" (click)="goBack()">Go Back</button>
+    <br>
+    <button type="button" class="review" routerLink="/addRating/{{product.id}}" *ngIf="loggedinuser" >Submit Your Review</button>
 
 
 

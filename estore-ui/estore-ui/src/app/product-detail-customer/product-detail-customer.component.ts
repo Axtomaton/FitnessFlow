@@ -5,6 +5,7 @@ import { ProductService } from '../product.service';
 import { Location } from '@angular/common';
 import { UserService } from '../user.service';
 import { User } from '../User';
+
 @Component({
   selector: 'app-product-detail-customer',
   templateUrl: './product-detail-customer.component.html',
