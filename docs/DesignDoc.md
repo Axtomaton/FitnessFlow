@@ -94,13 +94,14 @@ with the e-store application.
 
 
 ### ViewModel Tier
-> _Provide a summary of this tier of your architecture. This
-> section will follow the same instructions that are given for the View
-> Tier above._
-
-> _At appropriate places as part of this narrative provide one or more
-> static models (UML class diagrams) with some details such as critical attributes and methods._
-
+> The sequence diagram above gives a good idea about how the view model 
+> works for the customer since it divides what permissions they have/ 
+> actions they can do if they are logged in or if they aren't logged in
+> at all. The only thing missing is a admin tier but they only things an 
+> admin can do that a customer can't do is have the ability to add/remove/
+> update items so there would be special methods like add() remove() or 
+> update() that they would have an they would have a special username/
+> password for their attribute since their credentials are unique.
 
 ### Model Tier
 > _Provide a summary of this tier of your architecture. This
@@ -111,31 +112,35 @@ with the e-store application.
 > static models (UML class diagrams) with some details such as critical attributes and methods._
 
 ### Static Code Analysis/Design Improvements
-> _Discuss design improvements that you would make if the project were
-> to continue. These improvement should be based on your direct
-> analysis of where there are problems in the code base which could be
-> addressed with design changes, and describe those suggested design
-> improvements._
-
-> _With the results from the Static Code Analysis exercise, 
-> discuss the resulting issues/metrics measurements along with your analysis
-> and recommendations for further improvements. Where relevant, include 
-> screenshots from the tool and/or corresponding source code that was flagged._
+> When it came to the static code analysis the only time we ran it was
+> the first time and the only issue we had with that at the time was the 
+> code coverage since we didn't test out the new functions/ 
+> implementations we did to our backend.
+> Improvements to make if the project were to continue:
+> 1)Time management so we can avoid working on the project last minute
+> 2)Checking out the merge request and trying to run it on our own 
+> machines, instead of only reviewing the code in the merge request.
+> 3) Updating the trello board in a manner which outlines our project 
+> plans more effectively and be more specific about features/ goals we 
+> have in mind for the project.
 
 ## Testing
 > _This section will provide information about the testing performed
 > and the results of the testing._
 
 ### Acceptance Testing
-> _Report on the number of user stories that have passed all their
-> acceptance criteria tests, the number that have some acceptance
-> criteria tests failing, and the number of user stories that
-> have not had any testing yet. Highlight the issues found during
-> acceptance testing and if there are any concerns._
+> Most of our user stories have passed with minimal bugs the only issue 
+> is that we missed the target on 1 or 2 stories where it was supposed to 
+> be our MVP feature such as searching for a product which will be 
+> targeted in the final sprint. In addition to this we have a current 
+> issue where a product being removed from a user's shopping cart isn't 
+> removed instantly and has a delay but we don't know exactly how this
+> happens so we will also work on this bug in the final sprint.
 
 ### Unit Testing and Code Coverage
-> _Discuss your unit testing strategy. Report on the code coverage
-> achieved from unit testing of the code base. Discuss the team's
-> coverage targets, why you selected those values, and how well your
-> code coverage met your targets. If there are any anomalies, discuss
-> those._
+> Our estore api controller, persistence, and model have high code  
+> coverage since there was a lot of testing done on the backend to make 
+> sure they are as little bugs as possible. There is one file where the 
+> code coverage came at 0% due to it only being one function and thats 
+> simply opening up the server.
+![Jacoco](testing_jacoco.jpg)
