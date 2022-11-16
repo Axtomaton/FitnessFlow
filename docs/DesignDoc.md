@@ -77,21 +77,20 @@ Both the ViewModel and Model are built using Java and Spring Framework. Details 
 This section describes the web interface flow; this is how the user views and interacts
 with the e-store application.
 
-> _Provide a summary of the application's user interface.  Describe, from
-> the user's perspective, the flow of the pages in the web application._
-
+> Once a user visits the home page of the e-store they are greeted with a
+> big picture and in the middle of their screen and only have a 
+> navigation >bare to guide them throughout the website. Any user is able 
+> to view >products but in order to purchase them they need to be logged 
+> in, users >will be redirected to login/signup page if they try to add 
+> an item to >their shopping cart. The navigation bar makes traversing 
+> through the >e-store simple as everything is very straightfoward/ one 
+> dimensional.  
 
 ### View Tier
-> _Provide a summary of the View Tier UI of your architecture.
-> Describe the types of components in the tier and describe their
-> responsibilities.  This should be a narrative description, i.e. it has
-> a flow or "story line" that the reader can follow._
+> There is an admin view which only the owner of the e-store can have access to via credentials and they have the abilities to add, update and remove items as they please.
+> There is a customer view where they don't have the abilities to update/add/ and remove items such as the admin and the only thing they can do is login/signup and add items to their shopping cart only if they are logged in to then purchase.
 
-> _You must also provide sequence diagrams as is relevant to a particular aspects 
-> of the design that you are describing.  For example, in e-store you might create a 
-> sequence diagram of a customer searching for an item and adding to their cart. 
-> Be sure to include an relevant HTTP reuqests from the client-side to the server-side 
-> to help illustrate the end-to-end flow._
+![Sequence Diagram](Sequence-Diagram-team-6.jpg)
 
 
 ### ViewModel Tier
