@@ -83,7 +83,7 @@ with the e-store application.
 > to view >products but in order to purchase them they need to be logged 
 > in, users >will be redirected to login/signup page if they try to add 
 > an item to >their shopping cart. The navigation bar makes traversing 
-> through the >e-store simple as everything is very straightfoward/ one 
+> through the e-store simple as everything is very straightfoward/ one 
 > dimensional.  
 
 ### View Tier
@@ -104,7 +104,12 @@ with the e-store application.
 > password for their attribute since their credentials are unique.
 
 ### Model Tier
-For the Models, We have a Customer Model and a Product model. They define how a User and a Product is defined in our Database and our application. We have several other Models in the Models Tier, but these models are only there to support the Product and the User model. The other models do not ahve any associated json files with them. They exist only to keep certain data models together. 
+> For the Models, We have a Customer Model and a Product model. They 
+> define how a User and a Product is defined in our Database and our 
+> application. We have several other Models in the Models Tier, but these 
+> models are only there to support the Product and the User model. The 
+> other models do not ahve any associated json files with them. They 
+> exist only to keep certain data models together. 
 
 ### Static Code Analysis/Design Improvements
 > When it came to the static code analysis the only time we ran it was
@@ -136,4 +141,4 @@ For the Models, We have a Customer Model and a Product model. They define how a 
 > sure they are as little bugs as possible. There is one file where the 
 > code coverage came at 0% due to it only being one function and thats 
 > simply opening up the server.
-![Jacoco](testing_jacoco.jpg)
+![Jacoco](testing_jacoco.png)
