@@ -104,12 +104,7 @@ with the e-store application.
 > password for their attribute since their credentials are unique.
 
 ### Model Tier
-> _Provide a summary of this tier of your architecture. This
-> section will follow the same instructions that are given for the View
-> Tier above._
-
-> _At appropriate places as part of this narrative provide one or more
-> static models (UML class diagrams) with some details such as critical attributes and methods._
+For the Models, We have a Customer Model and a Product model. They define how a User and a Product is defined in our Database and our application. We have several other Models in the Models Tier, but these models are only there to support the Product and the User model. The other models do not ahve any associated json files with them. They exist only to keep certain data models together. 
 
 ### Static Code Analysis/Design Improvements
 > When it came to the static code analysis the only time we ran it was
@@ -125,8 +120,6 @@ with the e-store application.
 > have in mind for the project.
 
 ## Testing
-> _This section will provide information about the testing performed
-> and the results of the testing._
 
 ### Acceptance Testing
 > Most of our user stories have passed with minimal bugs the only issue 
