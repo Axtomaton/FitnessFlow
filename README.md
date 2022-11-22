@@ -22,16 +22,9 @@ An online E-store system built in Java 8=>11
 
 ## How to run it
 
-1. Clone the repository and go to the root directory.
-2. Execute `mvn compile exec:java`
-3. Open in your browser `http://localhost:8080/`
-4.  _add any other steps required or examples of how to use/run_
-
-## Known bugs and disclaimers
-(It may be the case that your implementation is not perfect.)
-
-Document any known bug or nuisance.
-If any shortcomings, make clear what these are and where they are located.
+1. Go to the estore-api folder, then open the terminal and execute "mvn compile exec:java"
+2. Go to estore-ui/estore-ui directory, open a new terminal window into this directory and execute "ng serve --open"
+3. Open the web browser and go to "http://localhost:4200"
 
 ## How to test it
 
@@ -65,12 +58,6 @@ To run tests on all the tiers in isolation do this:
 3. The generated PDF will be in `PROJECT_DOCS_HOME/` directory
 
 
-## How to setup/run/test program 
-1. Tester, first obtain the Acceptance Test plan
-2. IP address of target machine running the app
-3. Execute ________
-4. ...
-5. ...
 
 ## License
 

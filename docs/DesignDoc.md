@@ -42,7 +42,7 @@ This document describes the features and functionality of our newly developed We
 
 
 ### Roadmap of Enhancements
-* User Rating: The user should be able to add ratings for the products and leave a review for the products if the user wants
+* User Rating: The user should be able to add ratings for the products and leave a review for the products necessary (added in Sprint 3)
 * View Typed Password: Visitor should be able to view the typed password when signing.
 
 ## Application Domain
@@ -104,12 +104,19 @@ with the e-store application.
 > password for their attribute since their credentials are unique.
 
 ### Model Tier
-> For the Models, We have a Customer Model and a Product model. They 
-> define how a User and a Product is defined in our Database and our 
-> application. We have several other Models in the Models Tier, but these 
-> models are only there to support the Product and the User model. The 
-> other models do not ahve any associated json files with them. They 
-> exist only to keep certain data models together. 
+> The model Tier is where we define our data classes. We have a class 
+> for all the entities we use within this application.
+>
+> Product: The product class defines the attributes of a product hosted on the estore.
+> User: The User class defines the attributes of the user who signs up on the estore. Along with personal information
+>       each user has a shopping cart so that they can resume their shopping where they left it.
+> Rating: The rating class defines the structure of a rating. Users can leave a rating for any of the products that
+>         they like.
+> ProductRating: This is wrapper class that keeps a product and its associated rating together in one object
+> UserLogin: This is class to accomodate a temporary object, when the user submits the login form. The data is packed 
+>            together in a UserLogin object before getting passed on to the server.
+
+
 
 ### Static Code Analysis/Design Improvements
 > When it came to the static code analysis the only time we ran it was
