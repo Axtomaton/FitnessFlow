@@ -38,8 +38,6 @@ This document describes the features and functionality of our newly developed We
 * Users can add or remove products from their shopping cart.
 * Users can checkout their shopping carts.
 
-<!-- ### MVP Features -->
-
 
 ### Roadmap of Enhancements
 * User Rating: The user should be able to add ratings for the products and leave a review for the products necessary (added in Sprint 3)
@@ -51,7 +49,7 @@ This document describes the features and functionality of our newly developed We
 ![Domain Model](Domain.png)
 
 
-The Admin/Parkour gym maintains the Products that the store seliing. Admin/Parkour gym also validate visitors when they try to login or sign up. If the validation is successful they are either logged in as an existing user or a brand new user. The user has the ability search and add/remove products to/from their personal shoppping cart. Users can then checkout their shopping cart.
+The Admin/Parkour gym maintains the Products that the store seliing. Admin/Parkour gym also validate visitors when they try to login or sign up. If the validation is successful they are either logged in as an existing user or a brand new user. The user has the ability search and add/remove products to/from their personal shoppping cart. Users can then checkout their shopping cart. A user can look at the various products and choose to add to add them to the shopping cart or/and leave a review. A visitor to the store can only view the products and read their descriptions. Until the visitor signs up, the visitor is not allowed to put items in the cart or leave a review on the products. The visitor can become a user by signing up or by logging in.
 
 ## Architecture and Design
 
@@ -71,6 +69,7 @@ The View is the client-side SPA built with Angular utilizing HTML, CSS and TypeS
 
 Both the ViewModel and Model are built using Java and Spring Framework. Details of the components within these tiers are supplied below.
 
+The data is stored in JSON files
 
 ### Overview of User Interface
 
@@ -88,7 +87,8 @@ with the e-store application.
 
 ### View Tier
 > There is an admin view which only the owner of the e-store can have access to via credentials and they have the abilities to add, update and remove items as they please.
-> There is a customer view where they don't have the abilities to update/add/ and remove items such as the admin and the only thing they can do is login/signup and add items to their shopping cart only if they are logged in to then purchase.
+> There is a customer view where they don't have the abilities to update/add/ and remove items such as the admin and the only thing they can do is 
+> login/signup and add items to their shopping cart only if they are logged in to then purchase.
 
 ![Sequence Diagram](Sequence-Diagram-team-6.jpg)
 
