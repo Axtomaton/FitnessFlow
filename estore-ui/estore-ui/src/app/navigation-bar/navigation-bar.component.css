@@ -6,3 +6,7 @@ button{
 button:hover{
     background-color: rgb(60, 108, 249);;
 }
+.greet{
+    font-size: 30px;
+    font-style: italic;
+}
