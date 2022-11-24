@@ -27,5 +27,4 @@ export class CustomerViewComponent implements OnInit {
     this.productservice.getProducts().subscribe(products=>this.products = products)
   }
   
-
 }

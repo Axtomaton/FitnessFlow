@@ -1,8 +1,9 @@
 <body>
 <app-navigation-bar></app-navigation-bar>
+
 <div class="product-list">
     <h2>Listings</h2>
-    <ul >
+    <!-- <ul >
         <li *ngFor="let product of products">
             <a routerLink="/customer/{{product.id}}">
                 <button> 
@@ -12,7 +13,11 @@
             </button>
             </a>
         </li>
-    </ul>
-    
-    </div>
+    </ul> -->
+        <app-product-search></app-product-search>
+   
+</div>
+
+
+
 </body>

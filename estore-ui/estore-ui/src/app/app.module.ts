@@ -19,6 +19,7 @@ import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { ProductDetailCustomerComponent } from './product-detail-customer/product-detail-customer.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { AddReviewPageComponent } from './add-review-page/add-review-page.component';
+import { ProductSearchComponent } from './product-search/product-search.component';
 
 
 @NgModule({
@@ -36,8 +37,8 @@ import { AddReviewPageComponent } from './add-review-page/add-review-page.compon
     CustomerViewComponent,
     ProductDetailCustomerComponent,
     NavigationBarComponent,
-    AddReviewPageComponent
-    
+    AddReviewPageComponent,
+    ProductSearchComponent,    
   ],
   imports: [
     BrowserModule,

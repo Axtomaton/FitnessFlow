@@ -46,7 +46,7 @@ export class ProductService {
     if(!term.trim()){
       return this.getProducts();
     }
-    return this.http.get<Product[]>(`${this.baseUrl}/?Name=${term}`).pipe(
+    return this.http.get<Product[]>(`${this.baseUrl}product/?name=${term}`).pipe(
       tap(x => x.length ?
         console.error(`found Products matching "${term}"`) :
         console.error(`no Products matching "${term}"`)),
