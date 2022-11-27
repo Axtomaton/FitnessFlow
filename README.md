@@ -1,6 +1,6 @@
 # E-Store:  Parkour Gym
-# A family run gym in Rochester, NY. The gym sells Online Lessons, Instructor Taught lessons, and Gym passes.
-# Modify this document to expand any and all sections that are applicable for a better understanding from your users/testers/collaborators (remove this comment and other instructions areas for your FINAL release)
+# A family run gym in Rochester, NY. The gym sells Online Lessons, Instructor Taught lessons.
+
 
 An online E-store system built in Java 8=>11
   
