@@ -90,7 +90,7 @@ with the e-store application.
 > There is a customer view where they don't have the abilities to update/add/ and remove items such as the admin and the only thing they can do is 
 > login/signup and add items to their shopping cart only if they are logged in to then purchase.
 
-![Sequence Diagram](Sequence-Diagram-team-6.jpg)
+![Sequence Diagram](Sequence-Diagram.jpeg)
 
 
 ### ViewModel Tier
