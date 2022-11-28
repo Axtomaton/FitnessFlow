@@ -31,11 +31,15 @@ form {
   
   /* Extra style for the cancel button (red) */
   .cancelbtn {
+    position:relative;
     width: auto;
+    bottom: 90px;
     padding: 10px 18px;
     background-color: #f44336;
   }
   .loginbtn {
+    position:relative;
+    top: 20px;
     width: auto;
     padding: 10px 18px;
     background-color: #04AA6D;

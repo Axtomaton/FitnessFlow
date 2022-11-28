@@ -1,7 +1,18 @@
 <nav class="top-navbar">
-    <label class="logo"><a routerLink="">Rochester Parkour</a></label>
-    <span *ngIf="loggedinuser" class="greet">Welocome Back! {{loggedinuser.firstName}}</span>
+    <label><a routerLink="">
+      <img class="logo"src="https://i.ibb.co/nztk9XR/Rochester-Parkour-logos-transparent.png">
+    </a>
+  </label>
+
+      <input type="checkbox" id="check">
+        <label for = "check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+    </label>
     <ul>
+
+      <!-- <div *ngIf="loggedinuser?.username=='aagmanrelan'">
+        <li><a routerLink="/adminView" routerLinkActive="active">Inventory Management</a></li>
+       </div> -->
       <div *ngIf="loggedinuser==null">
         <li><a routerLink="/about" routerLinkActive="active">about</a></li>
         <li><a routerLink="/customerView" routerLinkActive="active">Products</a></li>
