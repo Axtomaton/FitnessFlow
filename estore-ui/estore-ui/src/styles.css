@@ -2,6 +2,9 @@
 body .logo{
     color:#321cc5;
     text-align: left;
+    width: 270px;
+    height: 230px;
+    top: -75px;
     position:relative
 }
 .top-navbar{
@@ -19,6 +22,7 @@ body .logo{
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    overflow-y: hidden;
   }
   body{
     margin: 0px;
@@ -58,7 +62,7 @@ body .logo{
     text-decoration: none;
     text-transform: uppercase;
   }
-  a.active,a:hover{
+  li a.active, li a:hover{
     background: #1b9bff;
     transition: .5s;
   }
