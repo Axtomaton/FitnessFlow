@@ -124,7 +124,7 @@ public class ProductFileDAO implements ProductDAO{
     private Product[] getProductsArray(String Name){
         ArrayList<Product> productarraylist = new ArrayList<>();
         for (Product product: Products.values()){
-            if(Name==null || product.getName().contains(Name)){
+            if(Name==null || product.getName().toLowerCase().contains(Name.toLowerCase())){
                 productarraylist.add(product);
             }
         }
