@@ -5,12 +5,40 @@
 }
 #product-instructor{
     margin-left: 42px;
+   
 }
 #product-type{
     margin-left: 73px;
 }
 #product-name{
     margin-left: 5px;
+}
+.product-course-name{
+    text-align: center;
+}
+#instructor-name-melissa{
+    text-align: right;
+    position: relative;
+    font-weight: bold;
+    /* up is - */
+    top: -350px;
+    /* right is + */
+    left: -350px;
+}
+#class-type-abs{
+    text-align: right;
+    position: relative;
+    font-weight: bold; 
+    /* up is - */
+    top: -300px;
+    /* right is + */
+    left: -340px; 
+} 
+h2{
+    text-align: center; 
+    font-family: 'georgia';
+    font-weight: bold; 
+    font-size: xx-large;
 }
 #product-room{
     margin-left: 3px;

@@ -1,17 +1,24 @@
 <body>
   <app-navigation-bar></app-navigation-bar>
 <div *ngIf="product" class="product-details">
-
-    <h2>{{product.Name }} Details</h2>
-    <div><span>id: </span>{{product.id}}</div>
+    
+    <h2>{{product.Name }} course</h2>
+    <!-- <div><span>id: </span>{{product.id}}</div> -->
     <div>
-      <label for="product-name">Product name: </label>
+      <!-- <label for="product-name">Course is about: </label>
       {{product.Name}}
-      <br>
-      <label for="product-instructor">Instructor:</label>
-      {{product.Instructor}}      <br>
-      <label for="product-type">Type:</label>
+      <br> -->
+      <div id="melissa-instructor"><img src="https://media.istockphoto.com/id/856797530/photo/portrait-of-a-beautiful-woman-at-the-gym.jpg?s=612x612&w=0&k=20&c=0wMa1MYxt6HHamjd66d5__XGAKbJFDFQyu9LCloRsYU=" alt="melissa" 
+        style="border-radius:85%"></div>
+      <!-- <style></style> -->
+      <div id="instructor-name-melissa">
+        <label for="product-instructor">Instructor: </label>
+        {{product.Instructor}} <br>
+      </div>
+      <div id="class-type-abs">
+      <label for="product-type">Type of class:</label>
       {{product.Type}}      <br>
+      </div>
       <label for="product-room">Room Number:</label>
       {{product.Room_Number}}      <br>
       <label for="product-aval">Availability:</label>
