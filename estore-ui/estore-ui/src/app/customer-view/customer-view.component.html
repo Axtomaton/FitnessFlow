@@ -5,17 +5,45 @@
 <div class="product-list">
     <h2>Listings</h2>
     <app-product-search></app-product-search>
-    <ul >
+    <!-- <div *ngFor="let product of products"> -->
+    <ul>
         <li *ngFor="let product of products">
             <a routerLink="/customer/{{product.id}}">
-                <button onclick="changeDisplay(this)"> 
+                <div id="abs" *ngIf="product.id==1">
+                    <button>{{product.Name}}</button>
+                </div>
+                <div id="abdomen" *ngIf="product.id==2">
+                    <button>{{product.Name}}</button>
+                </div>
+                <div id="shoulders" *ngIf="product.id==3">
+                    <button>{{product.Name}}</button>
+                </div>
+                <div id="biceps" *ngIf="product.id==4">
+                    <button>{{product.Name}}</button>
+                </div>
+                <div id="triceps" *ngIf="product.id==5">
+                    <button>{{product.Name}}</button>
+                </div>
+                
+                <div id="placeholder1" *ngIf="product.id==6">
+                    <button>{{product.Name}}</button>
+                </div>
+                <!-- <div *ngIf="product.id!=null">
+                    <button>{{product.Name}}</button>
+                </div> -->
+
+                <!-- <div *ngIf="{{product.id}}==1"> -->
+                    <!-- <button>Abs</button> -->
+                <!-- </div> -->
+                <!-- <button>  -->
                 <!-- <span class="badge">{{product.id}}</span> -->
-                <br>
-                <span class="name">{{product.Name}}</span>
-            </button>
+                <!-- <br> -->
+                <!-- <span class="name">{{product.Name}}</span> -->
+            <!-- </button> -->
             </a>
         </li>
     </ul>
+    <!-- </div> -->
    
 </div>
 

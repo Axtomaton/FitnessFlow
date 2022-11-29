@@ -34,6 +34,20 @@
     /* right is + */
     left: -340px; 
 } 
+#price{
+    text-align: right;
+    position: relative;
+    font-weight: bold; 
+    left: -459px; 
+    top: -250px;
+}
+#ratings-product{
+    text-align: right;
+    position: relative;
+    /* font-weight: bold;  */
+    left: -459px; 
+    top: -250px;
+}
 h2{
     text-align: center; 
     font-family: 'georgia';
@@ -54,10 +68,23 @@ h2{
     height: 30px;
     padding: 5px;
 }
-.save{
-    padding: 2px;
+/* #align-add-button{
+    left: -459px; 
+    top: -250px;
+} */
+#add-to-cart{
+    position:absolute; 
     height: 30px;
-    width: 75px;
+    width: 100px; 
+    right: 250px;
+    top: 550px;
+}
+#go-back{
+    position:absolute; 
+    height: 30px;
+    width: 100px; 
+    right: 455px;
+    top: 550px;
 }
 .div{
     margin-top: 150px;
