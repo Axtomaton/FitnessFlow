@@ -2,7 +2,7 @@
     margin-top: 70px;
     margin-left:10em;
     position: relative;
-    top: 39px;
+    top: 40px;
 }
 .product-list button{
     height:40px;
@@ -28,6 +28,9 @@
     text-decoration: none;
     color: black;
 }
+.product-list #abs #melissa-instructor {
+    top: 50px;
+}
 #triceps{
-    text-align: right;
+    position: relative;
 }
