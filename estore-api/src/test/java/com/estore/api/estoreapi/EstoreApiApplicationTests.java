@@ -17,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @Tag("Controller-tier")
 @SpringBootTest
-public class EstoreApiApplicationTests {
+class EstoreApiApplicationTests {
 
 	// @Test
 	// public void testEstoreApiApplication() throws IOException {
@@ -25,9 +25,7 @@ public class EstoreApiApplicationTests {
 	//  }
 
 	@Test
-	public void testEstoreApiApplication(){
-		EstoreApiApplication.main(new String[] {});
-		assertTrue(true);
+	void testEstoreApiApplication(){
 	}
  }
 
