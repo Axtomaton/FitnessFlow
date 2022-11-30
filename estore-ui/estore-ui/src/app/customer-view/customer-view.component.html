@@ -1,23 +1,18 @@
 <body>
-<app-navigation-bar></app-navigation-bar>
-
-<div class="product-list">
-    <h2>Listings</h2>
-    <!-- <ul >
-        <li *ngFor="let product of products">
-            <a routerLink="/customer/{{product.id}}">
-                <button> 
-                <span class="badge">{{product.id}}</span>
-                <br>
-                <span class="name">{{product.Name}}</span>
-            </button>
-            </a>
-        </li>
-    </ul> -->
-        <app-product-search></app-product-search>
-   
-</div>
-
-
-
-</body>
+    <app-navigation-bar></app-navigation-bar>
+    <div class="product-list">
+        <app-product-search></app-product-search><br>
+        <h2>Listings</h2>
+        <ul>
+            <li *ngFor="let product of products">
+                <a routerLink="/customer/{{product.id}}">
+                    <button> 
+                    <!-- <span class="badge">{{product.id}}</span> -->
+                    <!-- <br> -->
+                    <span class="name">{{product.Name}}</span>
+                </button>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </body>

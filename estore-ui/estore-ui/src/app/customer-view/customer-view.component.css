@@ -2,12 +2,16 @@
     margin-top: 70px;
     margin-left:10em;
     position: relative;
-    top: 39px;
+    top: 40px;
 }
 .product-list button{
     height:40px;
-    width: 100px;
+    width: 400px;
     margin: 5px;;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
 }
 .product-list button:hover{
     background-color: aqua;
@@ -23,4 +27,11 @@
 .product-list a{
     text-decoration: none;
     color: black;
+}
+/* .product-list #abs-button{
+    right: 10000px;
+} */
+#abs-button-id {
+    right:100%;
+    /* text-align: right; */
 }
