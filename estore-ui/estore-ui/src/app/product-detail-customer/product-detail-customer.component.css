@@ -128,10 +128,19 @@ h2{
     height: 30px;
     margin-left: 105px;
 }
-.review{
-    width: 105px;
+#review{
     height: 30px;
-    margin-left:75px;
+    width: 175px; 
+    position: absolute;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 550px;
+    /* right is + */
+    left: 405px; 
+    /* width: 105px;
+    height: 30px;
+    margin-left:75px; */
 }
 h1{
     position: relative;

@@ -44,6 +44,6 @@
     <!-- </div> -->
     <button type="button" id="go-back" class="go-back" (click)="goBack()">Go Back</button>
     <br>
-    <button type="button" class="review" routerLink="/addRating/{{product.id}}" *ngIf="loggedinuser" >Submit Your Review</button>
+    <button type="button" id="review" routerLink="/addRating/{{product.id}}" *ngIf="loggedinuser" ><span>Submit A Review</span> </button>
   </div>
 </body>
