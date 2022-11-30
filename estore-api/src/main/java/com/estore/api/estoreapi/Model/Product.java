@@ -26,6 +26,7 @@ public class Product {
     private boolean Available;
     private double Price;
     private ArrayList<Rating> Ratings;
+    // image
 
     /**
      * {@inheritDoc}

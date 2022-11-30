@@ -5,12 +5,77 @@
 }
 #product-instructor{
     margin-left: 42px;
+   
 }
 #product-type{
     margin-left: 73px;
 }
 #product-name{
     margin-left: 5px;
+}
+.product-course-name{
+    text-align: center;
+}
+#instructor-name-melissa{
+    position: relative;
+    /* text-align:left; */
+    /* position: relative; */
+    font-size:large;
+    font-weight: bold;
+    /* up is + */
+    top: 50px;
+    /* right is - */
+    left: 50px;
+}
+#class-type-abs{
+    /* text-align: right; */
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 75px;
+    /* right is + */
+    left: 50px; 
+} 
+#room-number{
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 100px;
+    /* right is + */
+    left: 50px; 
+}
+#avail{
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 125px;
+    /* right is + */
+    left: 50px; 
+}
+#price{
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 150px;
+    /* right is + */
+    left: 50px; 
+}
+#ratings-product{
+    text-align: right;
+    position: relative;
+    /* font-weight: bold;  */
+    left: -459px; 
+    top: -250px;
+}
+h2{
+    text-align: center; 
+    font-family: 'georgia';
+    font-weight: bold; 
+    font-size: xx-large;
 }
 #product-room{
     margin-left: 3px;
@@ -26,10 +91,34 @@
     height: 30px;
     padding: 5px;
 }
-.save{
-    padding: 2px;
+/* #align-add-button{
+    left: -459px; 
+    top: -250px;
+} */
+#add-to-cart{
+    /* position:absolute;  */
     height: 30px;
-    width: 75px;
+    width: 150px; 
+    /* right: 250px;
+    top: 550px; */
+    position: absolute;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 550px;
+    /* right is + */
+    left: 250px; 
+}
+#go-back{
+    height: 30px;
+    width: 150px; 
+    position: absolute;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 550px;
+    /* right is + */
+    left: -10px; 
 }
 .div{
     margin-top: 150px;
@@ -39,8 +128,48 @@
     height: 30px;
     margin-left: 105px;
 }
-.review{
-    width: 105px;
+#review{
     height: 30px;
-    margin-left:75px;
+    width: 175px; 
+    position: absolute;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 550px;
+    /* right is + */
+    left: 405px; 
+    /* width: 105px;
+    height: 30px;
+    margin-left:75px; */
+}
+h1{
+    position: relative;
+    text-transform: uppercase;
+    color: #ed3f84;
+    left: 150px; 
+    top: 120px;
+}
+#box-review{
+    border: 2px solid gray;
+    position: relative;
+    left: 1225px;
+    width: 550px;
+    /* height: 200px;  */
+    top: 150px;
+    /* margin : 0; */
+    /* margin-top: 0 ;
+    margin-bottom: 0 ; */
+    margin: 0 !important;
+}
+p{
+    /* border: 2px solid gray; */
+    padding: 8px;
+    /* left: 1225px; */
+    position: relative;
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 1px;
+    width: 550px;
+    height: 200px;
+    margin: 0 !important;
 }

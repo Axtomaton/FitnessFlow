@@ -26,7 +26,7 @@ export class ProductDetailCustomerComponent implements OnInit {
     this.getProduct();
     this.loggedinuser=this.userservice.getLoggedInUser()
   }
-
+  products:Product[]=[];
   goBack():void{
     this.location.back();
   }
