@@ -1,10 +1,37 @@
-.addProductReview{
+h2{
+    margin-top: 8%;
+    position: relative;
+    text-align: center; 
+    font-family: 'georgia';
+    font-weight: bold; 
+    font-size: xx-large;
+}
+
+#addProductReview{
     width: 80%;
     margin-top: 50px;
-    margin-left: auto;
+    position: relative;
+    /* margin-left: auto; */
+    text-align: left;
+    right: -150px;
+    top: -10px;
+    
 }
-.Product-Details{
-    width: 80%;
-    margin-top: 150px;
+#Product-Details{
+    /* width: 80%; */
+    /* margin-top: 150px; */
     margin-left: auto;
+    position: relative;
+    right: -150px;
+    top: 25px;
+    font-weight: bold;
+    font-size:large;
+   
+}
+textarea{
+    position: relative;
+    top: 10px;
+    resize: none;
+    height: 150px;
+    width: 350px;
 }

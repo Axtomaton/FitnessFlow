@@ -1,19 +1,19 @@
 <body>
 
     <app-navigation-bar></app-navigation-bar>
-
 <div *ngIf="product">
-    <div class="Product-Details">
-        Name: {{product.Name}} <br>
-        Instructed By: {{product.Instructor}}
+    <h2>{{product.Name}} course</h2>
+    <div id="Product-Details">
+        Instructed By {{product.Instructor}}
     </div>
-    <div class="addProductReview">
-        <input type="number" min="1" max="5" placeholder="Select your rating (1-5)" size="50" #rating>
+    <div id="addProductReview">
+
+        <i>Select your rating (1-5): </i><input type="number" min="1" max="5" placeholder="#" size="50" #rating>
         <br>
-        <textarea name="" id="" cols="30" rows="5" placeholder="Place holder text" #review></textarea>
+        <textarea name="" id="" cols="30" rows="5" placeholder="Enter a review..." #review></textarea>
         <br>
         
-        <input type="submit" (click)="AddRating(rating.valueAsNumber,review.value)">
+        <input type="submit" style="height: 30px; width: 60px; top: 10px; position: relative;" (click)="AddRating(rating.valueAsNumber,review.value)">
         <br>
     </div>
 </div>
