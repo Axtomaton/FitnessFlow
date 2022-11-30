@@ -1,19 +1,36 @@
-<body>
-<app-navigation-bar></app-navigation-bar>
-      <h1 class="order-summary">Order Summary</h1>
-<div class="products-in-cart">
-      <div class="products-in-cart">
-        <table>
-          <tr>
-            <th class="product-id">Product ID</th>
-          </tr>
-            <tr class="items" *ngFor="let item of shoppingcart">
-              <td>{{item}}</td>  
-              <button class="deleteproduct" (click)="removefromcart(item)"> Remove this item</button>
-        </table>
-        </div>
-      </div>
-      <button routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">Check Out</button>
-        <h3 class="Total-Price">Total: ${{totalcost}}</h3>
+<!DOCTYPE html>
 
-  </body>
+<head>
+
+</head>
+<body> 
+    
+  <app-navigation-bar></app-navigation-bar>
+
+    <h1 class="order-summary">Order Summary</h1>
+    <div class="products-in-cart">
+      <table style="border-spacing: 10px;">
+        <tr class="table-headers">
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Type</th>
+          <th>Room Number</th>
+          <th>Instructor Name</th>
+          <th>Price</th>
+        </tr>
+
+        <tr class="items-in-cart" *ngFor="let item of shoppingcart" >
+          <td id="product-id">{{item.id}}</td>
+          <td id="product-name">{{item.Name}}</td>
+          <td id="product-type">{{item.Type}}</td>
+          <td id="product-room-number">{{item.Room_Number}}</td>
+          <td id="product-instructor">{{item.Instructor}}</td> 
+          <td id="product-price">{{item.Price}}</td>
+          <button id="delete-button" (click)="removeItemFromCart(item)">X</button>
+        </tr>
+      </table>
+  </div>
+
+
+  <h3 class="Total-Price">Total: ${{totalcost}}</h3>
+      <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">CHECKOUT</a>
