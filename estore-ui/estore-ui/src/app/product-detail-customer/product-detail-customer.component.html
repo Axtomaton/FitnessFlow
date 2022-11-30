@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
   <app-navigation-bar></app-navigation-bar>
-<div *ngIf="product" class="product-details">
+<div *ngIf="product != null" class="product-details">
     
     <h2>{{product.Name }} course</h2>
     <!-- <div><span>id: </span>{{product.id}}</div> -->
@@ -16,7 +16,7 @@
         Room Number: {{product.Room_Number}}<br>
       </div>
       <div id="avail">
-      Availability: {{product.Available}}      <br>
+      Availability: {{product.Available}}<br>
       </div>
       <div id="price">
         Price: ${{product.Price}}
@@ -24,11 +24,16 @@
       <br>
       <div id="ratings-product">
         <!-- how to style ratings -->
-      <label *ngIf="product.Ratings.length!=0" for="product-price">
-        <h3>Ratings</h3>
+      <label *ngIf="product.Ratings.length!=0 || product.Ratings.length==0" for="product-price">
       </label>
+      <h1>Reviews</h1>
+      <div id="box-review" style="margin: 0 !important;">
         <div *ngFor="let rating of product.Ratings">
-            {{rating.RatingInNumber}} {{rating.Review}} {{rating.Username}}
+              <p style="margin: 0 !important;">
+              <i>{{rating.Review}}</i><br>
+                ~{{rating.Username}} (Rated this course a {{rating.RatingInNumber}}/5)
+              </p><br>
+            </div>
         </div> 
       </div>
     </div>
@@ -41,6 +46,4 @@
     <br>
     <button type="button" class="review" routerLink="/addRating/{{product.id}}" *ngIf="loggedinuser" >Submit Your Review</button>
   </div>
-  <!-- <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> -->
 </body>
