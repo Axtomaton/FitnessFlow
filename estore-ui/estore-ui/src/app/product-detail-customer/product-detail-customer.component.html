@@ -6,29 +6,20 @@
     <h2>{{product.Name }} course</h2>
     <!-- <div><span>id: </span>{{product.id}}</div> -->
     <div>
-      <!-- <label for="product-name">Course is about: </label>
-      {{product.Name}}
-      <br> -->
-
-      <!-- USE BELOW FOR OTHER PAGE - HOW TO USE DIFFERENT BORDER RADIUS -->
-      <div id="melissa-instructor"><img src="https://media.istockphoto.com/id/856797530/photo/portrait-of-a-beautiful-woman-at-the-gym.jpg?s=612x612&w=0&k=20&c=0wMa1MYxt6HHamjd66d5__XGAKbJFDFQyu9LCloRsYU=" alt="melissa" 
-        style="border-radius:99%"></div>
-      <!-- <style></style> -->
       <div id="instructor-name-melissa">
-        <label for="product-instructor">Instructor: </label>
-        {{product.Instructor}} <br>
+        Instructor: {{product.Instructor}} <br>
       </div>
       <div id="class-type-abs">
-      <label for="product-type">Type of class:</label>
-      {{product.Type}}      <br>
+        Type of class: {{product.Type}}<br>
       </div>
-      <!-- <label for="product-room">Room Number:</label>
-      {{product.Room_Number}}      <br>
-      <label for="product-aval">Availability:</label>
-      {{product.Available}}      <br> -->
+      <div id="room-number">
+        Room Number: {{product.Room_Number}}<br>
+      </div>
+      <div id="avail">
+      Availability: {{product.Available}}      <br>
+      </div>
       <div id="price">
-        <label for="product-price">Price:</label>
-        {{product.Price}} 
+        Price: ${{product.Price}}
       </div>
       <br>
       <div id="ratings-product">
@@ -37,7 +28,7 @@
         <h3>Ratings</h3>
       </label>
         <div *ngFor="let rating of product.Ratings">
-            {{rating.RatingInNumber}}  {{rating.Review}} . {{rating.Username}}
+            {{rating.RatingInNumber}} {{rating.Review}} {{rating.Username}}
         </div> 
       </div>
     </div>

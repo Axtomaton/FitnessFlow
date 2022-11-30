@@ -17,29 +17,52 @@
     text-align: center;
 }
 #instructor-name-melissa{
-    text-align: right;
     position: relative;
+    /* text-align:left; */
+    /* position: relative; */
+    font-size:large;
     font-weight: bold;
-    /* up is - */
-    top: -350px;
-    /* right is + */
-    left: -350px;
+    /* up is + */
+    top: 50px;
+    /* right is - */
+    left: 50px;
 }
 #class-type-abs{
-    text-align: right;
+    /* text-align: right; */
     position: relative;
     font-weight: bold; 
-    /* up is - */
-    top: -300px;
+    font-size:large;
+    /* up is + */
+    top: 75px;
     /* right is + */
-    left: -340px; 
+    left: 50px; 
 } 
-#price{
-    text-align: right;
+#room-number{
     position: relative;
     font-weight: bold; 
-    left: -459px; 
-    top: -250px;
+    font-size:large;
+    /* up is + */
+    top: 100px;
+    /* right is + */
+    left: 50px; 
+}
+#avail{
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 125px;
+    /* right is + */
+    left: 50px; 
+}
+#price{
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 150px;
+    /* right is + */
+    left: 50px; 
 }
 #ratings-product{
     text-align: right;
@@ -73,18 +96,29 @@ h2{
     top: -250px;
 } */
 #add-to-cart{
-    position:absolute; 
+    /* position:absolute;  */
     height: 30px;
-    width: 100px; 
-    right: 250px;
-    top: 550px;
+    width: 150px; 
+    /* right: 250px;
+    top: 550px; */
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 150px;
+    /* right is + */
+    left: 220px; 
 }
 #go-back{
-    position:absolute; 
     height: 30px;
-    width: 100px; 
-    right: 455px;
-    top: 550px;
+    width: 150px; 
+    position: relative;
+    font-weight: bold; 
+    font-size:large;
+    /* up is + */
+    top: 150px;
+    /* right is + */
+    left: -205px; 
 }
 .div{
     margin-top: 150px;
