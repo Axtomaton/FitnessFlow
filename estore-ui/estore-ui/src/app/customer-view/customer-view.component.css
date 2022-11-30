@@ -28,9 +28,10 @@
     text-decoration: none;
     color: black;
 }
-.product-list #abs #melissa-instructor {
-    top: 50px;
-}
-#triceps{
-    position: relative;
+/* .product-list #abs-button{
+    right: 10000px;
+} */
+#abs-button-id {
+    right:100%;
+    /* text-align: right; */
 }

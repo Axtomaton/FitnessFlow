@@ -4,15 +4,21 @@
 <div class="product-list">
     <h2>Listings</h2>
     <app-product-search></app-product-search>
-    <!-- <div *ngFor="let product of products"> -->
-    <ul>
-        <li *ngFor="let product of products">
+    <div *ngFor="let product of products">
+    <!-- <ul> -->
+        <!-- <span> -->
+            <!-- <div id="melissa-instructor"><img src="https://media.istockphoto.com/id/856797530/photo/portrait-of-a-beautiful-woman-at-the-gym.jpg?s=612x612&w=0&k=20&c=0wMa1MYxt6HHamjd66d5__XGAKbJFDFQyu9LCloRsYU=" alt="melissa" 
+            style="width:400px;height:300px;border-radius:70%;margin-top: 20px;"/>
+            </div> -->
+        <!-- </span> -->
+        <!-- <li *ngFor="let product of products"> -->
             <a routerLink="/customer/{{product.id}}">
-                <div id="abs" *ngIf="product.id==1">
-                    <!-- <div id="melissa-instructor"><img src="https://media.istockphoto.com/id/856797530/photo/portrait-of-a-beautiful-woman-at-the-gym.jpg?s=612x612&w=0&k=20&c=0wMa1MYxt6HHamjd66d5__XGAKbJFDFQyu9LCloRsYU=" alt="melissa" 
-                        style="width:400px;height:300px;border-radius:70%;"/>
-                    </div> -->
+                <div id="abs-button-id" *ngIf="product.id==1">
+                    <span class="tewst1"><img src="https://media.istockphoto.com/id/856797530/photo/portrait-of-a-beautiful-woman-at-the-gym.jpg?s=612x612&w=0&k=20&c=0wMa1MYxt6HHamjd66d5__XGAKbJFDFQyu9LCloRsYU=" alt="melissa" 
+                    style="width:400px;height:300px;border-radius:70%;margin-top: 20px;"/></span>
+                    <span>
                         <button>{{product.Name}}</button>
+                       </span>
                 </div>
                 <div id="abdomen" *ngIf="product.id==2">
                     <button>{{product.Name}}</button>
@@ -31,9 +37,9 @@
                     <button>{{product.Name}}</button>
                 </div> -->
             </a>
-        </li>
-    </ul>   
-    <!-- </div> -->
+        <!-- </li> -->
+    <!-- </ul>    -->
+    </div>
 </div>
 
 
