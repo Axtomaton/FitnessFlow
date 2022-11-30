@@ -20,6 +20,8 @@ export class UserService {
 
   private loggedinuser:User | undefined 
   private product:Product| undefined
+  private cart:Array<Product>=[];
+  private total:number=0;
   userLogin(user:string,pass:string,phone:string):void{
     const  body:userInformation={
         Username: user,
@@ -38,8 +40,10 @@ export class UserService {
       });
   }
 
-  addtoCart(id:number,username:string):void{
-        this.http.get(this.baseUrl+"addToCart?Username="+username+"&ProductID="+id).subscribe()
+  addtoCart(id:Product,username:string):void{
+        this.http.get(this.baseUrl+"addToCart?Username="+username+"&ProductID="+id.id).subscribe()
+        this.cart.push(id)
+        this.total += id.Price
   }
   removefromcart(id:number,username:string):void{
     this.http.get(this.baseUrl+"removeFromCart?Username="+username+"&ProductID="+id).subscribe()
@@ -78,45 +82,11 @@ export class UserService {
     this.router.navigate(["/signup"])
   }
 
-  returnCart():Array<Number>{
-    if(this.loggedinuser!=null){
-      const  body:userInformation={
-        Username: this.loggedinuser.username,
-        Password: this.loggedinuser.password,
-        phoneNumber: this.loggedinuser.phoneNumber
-      }
-      this.http.post<User>(this.baseUrl+"login",body,this.httpOptions).subscribe(user=>{
-        this.loggedinuser=user
-      })
-      return this.loggedinuser.cart
-    }
-    else{
-      return []
-    }
+  returnCart():Array<Product>{
+    return this.cart;
   }
   returntotal():Number{
-    let total:number=0
-    if(this.loggedinuser!=null){
-      const  body:userInformation={
-        Username: this.loggedinuser.username,
-        Password: this.loggedinuser.password,
-        phoneNumber: this.loggedinuser.phoneNumber
-      }
-      this.http.post<User>(this.baseUrl+"login",body,this.httpOptions).subscribe(user=>{
-        this.loggedinuser=user
-      })
-      for(let i=0;i<this.loggedinuser.cart.length;i++){
-        this.productservice.getProduct(Number(this.loggedinuser.cart[i])).subscribe((prod: Product | null | undefined)=>{
-          if(prod!=null){
-            this.product=prod
-          }
-        })
-        if(this.product!=null){
-          total=total+this.product?.Price
-        }
-      }
-    }
-    return total
+    return this.total
   }
 
   logout():void{

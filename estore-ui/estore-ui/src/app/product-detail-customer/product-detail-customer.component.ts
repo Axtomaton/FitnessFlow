@@ -21,7 +21,6 @@ export class ProductDetailCustomerComponent implements OnInit {
     private location: Location,
     private userservice:UserService
     ) { }
-
     loggedinuser?: User | null
   ngOnInit(): void {
     this.getProduct();
@@ -37,7 +36,7 @@ export class ProductDetailCustomerComponent implements OnInit {
       .subscribe(product => this.product = product);
   }
 
-  addToCart(id:number): void {
+  addToCart(id:Product): void {
     if(this.loggedinuser!=null){
       this.userservice.addtoCart(id,this.loggedinuser.username)
       this.goBack();

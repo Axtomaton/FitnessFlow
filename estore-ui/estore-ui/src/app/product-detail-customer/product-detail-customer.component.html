@@ -26,7 +26,7 @@
 
     </div>
 
-    <button type="button" class="save" (click)="addToCart(product.id)">Add to cart</button>
+    <button type="button" class="save" (click)="addToCart(product)">Add to cart</button>
     <button type="button" class="go-back" (click)="goBack()">Go Back</button>
     <br>
     <button type="button" class="review" routerLink="/addRating/{{product.id}}" *ngIf="loggedinuser" >Submit Your Review</button>
