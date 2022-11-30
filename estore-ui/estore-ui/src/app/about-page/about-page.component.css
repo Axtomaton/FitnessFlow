@@ -1,6 +1,6 @@
 .story{
     font-family: monospace;
-    color: rgb(42, 181, 209);
+    color: rgb(70, 194, 177);
     font-size: 20px;
 }
 
@@ -22,7 +22,7 @@
     width: 850px;
     height: 650px;
     margin: auto;
-    background: rgb(214, 226, 219);
+    background: rgb(206, 237, 220);
     overflow: hidden;
     transition: 0.5s;
     margin-top: 50px;
@@ -38,7 +38,7 @@
     top:40px;
     opacity: 0.7;
     left:280px;
-    color: blueviolet;
+    color: rgb(148, 54, 54);
     font-weight: bold;
 
 }

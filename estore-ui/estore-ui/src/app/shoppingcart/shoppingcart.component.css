@@ -1,69 +1,96 @@
 .submit-button{
-position: relative; 
-top:760px;
-transform: translate(-50%, -50%);
-margin: auto;
-width: 150px;
-height: 30px;
-font-size: 20px;
-border-radius: 12px;
-background-color:rgb(190, 222, 222);
-color: white;
-display: table-cell;
-left: 1000px;
-position: fixed; 
-font-size: 21px;
-text-align: center;
-vertical-align: auto;
-
-
-
-}
-
-.products-in-cart{
-  margin: auto;
-  height: 600px;
-  width: 50%;
-  position: relative; top: 150px;
-  /* background-color: rgb(255, 255, 255); */
-  border: 3px;
-  padding: 10px;
-  margin: auto;
-}
-
-
-
-.order-summary{
   position: relative; 
-  top: 150px;
+  top:760px;
+  transform: translate(-50%, -50%);
   margin: auto;
-  text-align: center;
-  font-size: 30px;
-
-  
-}
-.Total-Price{
-  position: fixed; 
-  top:750px;
-  left: 550px;
-  margin: auto;
-  width: 70px;
+  width: 150px;
   height: 30px;
-  white-space: nowrap;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-}
-.product-id{
-  background-color: aliceblue;
-  font-family:sans-serif;
-  width: 70px;
-  white-space: nowrap;
-
-
-}
-.items{
+  font-size: 20px;
+  border-radius: 12px;
+  background-color:rgb(61, 96, 172);
+  color: white;
+  display: table-cell;
+  left: 1000px;
+  position: fixed; 
+  font-size: 21px;
   text-align: center;
-}
+  vertical-align: auto;
+  
+  
+  }
+  .products-in-cart{
+    position: relative; 
+    text-align: center;
+    font-size: 15px;
+    position: fixed;
+    width: 500px;
+    height: 200px;
+    top: 30%;
+    left: 50%;
+    margin-top: -100px; /* Negative half of height. */
+    margin-left: -250px; /* Negative half of width. */
+  }
+  
+  
+  
+  .order-summary{
+    overflow: hidden;
+    overflow-y: hidden;
+    position: relative; 
+    top: 20px;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+  
+  
+  }
+  body{
+    overflow-y: hidden;
 
-.deleteproduct{
-  margin-left: 50px;
-}
+  }
+  
+  
+
+  .everything{
+    overflow-y: hidden;
+    position: relative;
+    margin:auto;
+    height: 790px;
+    background: rgb(229, 248, 248); 
+    box-shadow: -10px 25px 50px rgb(56, 55, 56);
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.7;
+    top:80px;
+    font-weight: bold;
+    text-align: center;
+
+  }
+  
+  
+  
+  .Total-Price{
+    position: fixed; 
+    top:750px;
+    left: 550px;
+    margin: auto;
+    width: 70px;
+    height: 30px;
+    white-space: nowrap;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .product-id{
+    background-color: aliceblue;
+    font-family:sans-serif;
+    width: 70px;
+    white-space: nowrap;
+  
+  
+  }
+  .items{
+    text-align: center;
+  }
+  
+  .deleteproduct{
+    margin-left: 50px;
+  }

@@ -4,10 +4,12 @@
 
 </head>
 <body> 
-    
+
   <app-navigation-bar></app-navigation-bar>
 
+  <div class="everything">
     <h1 class="order-summary">Order Summary</h1>
+
     <div class="products-in-cart">
       <table style="border-spacing: 10px;">
         <tr class="table-headers">
@@ -19,7 +21,7 @@
           <th>Price</th>
         </tr>
 
-        <tr class="items-in-cart" *ngFor="let item of shoppingcart" >
+        <tr class="items-in-cart" *ngFor="let item of shoppingcart" style="text-align:center">
           <td id="product-id">{{item.id}}</td>
           <td id="product-name">{{item.Name}}</td>
           <td id="product-type">{{item.Type}}</td>
@@ -30,7 +32,6 @@
         </tr>
       </table>
   </div>
-
-
   <h3 class="Total-Price">Total: ${{totalcost}}</h3>
       <a routerLink="/orderconfirmed" routerLinkActive="active" class="submit-button">CHECKOUT</a>
+  </div>
