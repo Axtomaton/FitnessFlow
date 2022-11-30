@@ -28,12 +28,17 @@ public class UserFileDAO  implements UserDAO{
     }
 
     private boolean load() throws IOException{
+        try{
         Users = new TreeMap<>();
         User[] userArray = objectMapper.readValue(new File(this.filename), User[].class);
         for(User user: userArray){
             Users.put(user.getUsername(), user);
         }
         return true;
+    }
+    catch(Exception exception){
+        return false;
+    }
     }
 
     private boolean save() throws IOException {
