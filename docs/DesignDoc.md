@@ -149,3 +149,21 @@ with the e-store application.
 > code coverage came at 0% due to it only being one function and thats 
 > simply opening up the server.
 ![Jacoco](testing_jacoco.png)
+
+## Design Principle Analysis
+> One of the design principles we followed was the Design by contract principle.
+> Via our domain model and sequence diagram we have determined the interactions 
+> made by certain components and this is especially evident in the sequence diagram
+> where we see the http client making obligations to provide benefits to the clients.
+> An example of this is where the client would sign in to an existing account they 
+> created and the http server is required to make an obligation such as giving the 
+> signed in user the ability to add an item to their shopping cart and being able to
+> check it out. The second design principle we followed was Open/Closed principle. 
+> This principle is evident in our Users Class since we don't need to modify the 
+> class itself to make room for a new user signing up to the estore (closed for
+> modification) but it is open for extension. In other words, an entity can allow 
+> its behaviour to be extended without modifying its source code. The final design
+> principle that was followed in our project is the Pure Fabrication principle since 
+> our project has a Persistence class which doesn't represent any domain entity 
+> unlike other classes which do in our domain model. The purpose of this class is to 
+> handle data storage functions.
